@@ -16,5 +16,7 @@
   REACT_APP_WEBSOCKET_URL = "wss://shoe-box-api.herokuapp.com/"
 
   # Redirects from what the browser requests to what we serve
-  /home              /
-  /dashboard         /dashboard
+ [[redirects]]
+  from = "/old-path"
+  to = "/new-path"
+  status = 301
