@@ -156,7 +156,7 @@ function App() {
     axios.post('http://localhost:8100/api/inventory', {barcode, newQty})
     .then(res => {
       const updatedInvetoryLine = res.data;
-      toast(`Inventory gets updated!`, {type: 'success'});
+      toast(`Inventory update successful!`, {type: 'success'});
       const newInvData = inventoryData.map(row => {
         if (row.barcode === updatedInvetoryLine.barcode) {
           row.qty = updatedInvetoryLine.quantity;
