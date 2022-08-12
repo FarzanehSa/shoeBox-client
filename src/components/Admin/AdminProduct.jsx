@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import ProductsContext from "../../contexts/ProductsContext";
+import GeneralContext from "../../contexts/GeneralContext";
 import { findProductBySku } from '../../helper/findProductBySku';
 import LoadProductForEdit from './LoadProductForEdit';
 import LoadAddForm from './LoadAddForm';
@@ -15,7 +15,7 @@ import TextField from '@mui/material/TextField';
 
 const AdminProduct = (props) => {
 
-  const { user, products } = useContext(ProductsContext);
+  const { user, products, url } = useContext(GeneralContext);
   const [sku, setSku] = useState("");
   const [product, setProduct] = useState({});
   const [availableSizes, setAvailableSizes] = useState([]);
@@ -24,7 +24,7 @@ const AdminProduct = (props) => {
     event.preventDefault();
     const productFound = findProductBySku(products, sku);
     if (productFound) {
-      axios.get(`http://localhost:8100/api/products/${productFound.id}`)
+      axios.get(`${url}/api/products/${productFound.id}`)
       .then((response) => {
         setProduct((prev) => response.data.product);
         setAvailableSizes((prev) => response.data.availableSizes);

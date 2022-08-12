@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-import ProductsContext from "../../contexts/ProductsContext";
+import GeneralContext from "../../contexts/GeneralContext";
 import OrderList from "./OrderList";
 
 import './AdminOrders.scss';
@@ -14,7 +14,7 @@ import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 const AdminOrders = (props) => {
 
-  const { user } = useContext(ProductsContext);
+  const { user, url } = useContext(GeneralContext);
   const [fromDate, setFromDate] = useState(new Date());
   const [toDate, setToDate] = useState(new Date());
   const [ordersData, setOrdersData] = useState([]);
@@ -29,7 +29,7 @@ const AdminOrders = (props) => {
     const startDate = new Date(fromDate).toLocaleDateString().slice(0, 10);
     const endDate = new Date(toDate).toLocaleDateString().slice(0, 10);
 
-    axios.get(`http://localhost:8100/orders`, {
+    axios.get(`${url}/orders`, {
       params: { fromDate: startDate, toDate: endDate}
     })
     .then((response) => {

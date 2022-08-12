@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import LinearProgress from "@mui/material/LinearProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import ProductsContext from "../../contexts/ProductsContext";
+import GeneralContext from "../../contexts/GeneralContext";
 import {findProductByBarcode} from '../../helper/findProductByBarcode';
 import InventoryList from './InventoryList';
 
@@ -16,7 +16,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 
 const AdminInventory = () => {
 
-  const { user } = useContext(ProductsContext);
+  const { user, url} = useContext(GeneralContext);
 
   const [barcode, setBarcode] = useState("");
   const [product, setProduct] = useState({});
@@ -28,14 +28,14 @@ const AdminInventory = () => {
   // console.log(inventoryData);
 
   useEffect(() => {
-    axios.get(`http://localhost:8100/api/inventory`)
+    axios.get(`${url}/api/inventory`)
     .then((response) => {
       setInventoryData(response.data.inventoryInfo.map(row => ({...row, select: false})));
     })
     .catch(error => {
       toast(`${error.message}`, {type: 'error'});
     })
-  }, [])
+  }, [url])
 
   useEffect(() => {
     setInventoryData(pre => pre.map(row => {
@@ -82,7 +82,7 @@ const AdminInventory = () => {
   }
 
   const addToInvetory = (barcode, newQty) => {
-    axios.post('http://localhost:8100/api/inventory', {barcode, newQty})
+    axios.post(`${url}/api/inventory`, {barcode, newQty})
     .then(res => {
       const updatedInvetoryLine = res.data;
       toast(`Inventory update successful!`, {type: 'success'});

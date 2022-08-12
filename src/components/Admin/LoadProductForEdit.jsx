@@ -4,7 +4,7 @@ import useFormAdminProduct from "../../hooks/useFormAdminProduct";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import './AdminProduct.scss';
-import ProductsContext from '../../contexts/ProductsContext';
+import GeneralContext from '../../contexts/GeneralContext';
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -20,7 +20,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
 
-  const {productSpec} = useContext(ProductsContext);
+  const {productSpec} = useContext(GeneralContext);
 
   const newSizes = productSpec.sizes.filter(row => !availableSizes.find(rowData => rowData.size_id === row.id));
   const baseSize = newSizes.map(row => {

@@ -2,21 +2,21 @@ import React, { useContext, useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import axios from "axios";
 
-import ProductsContext from "../../contexts/ProductsContext";
+import GeneralContext from "../../contexts/GeneralContext";
 import {BarChartProduct, BarChartColor, BarChartSize, BarChartSale,} from "./BarChart";
 
 import "./Dashboard.scss";
 
 const Dashboard = () => {
 
-  const { user } = useContext(ProductsContext);
+  const { user, url } = useContext(GeneralContext);
   const [topSellProducts, setTopSellProducts] = useState([]);
   const [topSellSizes, setTopSellSizes] = useState([]);
   const [topSellColors, setTopSellColors] = useState([]);
   const [totalSales, setTotalSales] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8100/dashboard`)
+    axios.get(`${url}/dashboard`)
     .then(res => {
       // console.log('🍎',res.data);
       setTopSellProducts(res.data.topSellProducts);
@@ -27,7 +27,7 @@ const Dashboard = () => {
     .catch(error => {
       toast(`${error.message}`, {type: 'error'});
     })
-  }, []);
+  }, [url]);
 
   const barProducts = topSellProducts.map(row => {
     return ({x: row.product, y: Number(row.qty) })

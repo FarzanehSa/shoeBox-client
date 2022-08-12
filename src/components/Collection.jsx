@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../styles/Collection.scss";
 
-import ProductsContext from "../contexts/ProductsContext";
+import GeneralContext from "../contexts/GeneralContext";
 import Product from "./Product";
 import ItemNotFound from "./ItemNotFound";
 
@@ -27,7 +27,7 @@ const Collection = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const category = useParams().id;
-  const { products } = useContext(ProductsContext);
+  const { products } = useContext(GeneralContext);
 
   const style = searchParams.get("searchedStyle");
   const color = searchParams.get("searchedColor");

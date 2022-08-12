@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 import "./NavbarAdminPortal.scss";
 
-import ProductsContext from "../../contexts/ProductsContext";
+import GeneralContext from "../../contexts/GeneralContext";
 import {SidebarAdminPortal} from "./SidebarAdminPortal"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ import Menu from '@mui/material/Menu';
 
 const NavbarAdminPortal = (props) => {
 
-  const { user, setUser } = useContext(ProductsContext);
+  const { user, setUser } = useContext(GeneralContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const [sidebar, setSidebar] = useState(false);
   const navigate = useNavigate();

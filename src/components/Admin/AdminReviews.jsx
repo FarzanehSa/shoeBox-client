@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import ProductsContext from "../../contexts/ProductsContext";
+import GeneralContext from "../../contexts/GeneralContext";
 import './AdminReviews.scss';
 
 import Paper from '@mui/material/Paper';
@@ -18,19 +18,19 @@ import { pink } from '@mui/material/colors';
 
 const AdminReviews = () => {
 
-  const { user } = useContext(ProductsContext);
+  const { user, url } = useContext(GeneralContext);
   const [newReviews, setNewReviews] = useState([])
 
   console.log('😈', newReviews);
   useEffect(() => {
-    axios.get(`http://localhost:8100/reviews`)
+    axios.get(`${url}/reviews`)
     .then((response) => {
       setNewReviews(response.data.newReviews)
     })
     .catch(error => {
       toast(`${error.message}`, {type: 'error'});
     })
-  }, []);
+  }, [url]);
 
   const handleChangeApproved = (event, index) => {
     const afterDecision = newReviews.map((review, i)=> {
@@ -63,7 +63,7 @@ const AdminReviews = () => {
       )
     })
     if (neededData.length) {
-      axios.post('http://localhost:8100/reviews/edit', {info: neededData})
+      axios.post(`${url}/reviews/edit`, {info: neededData})
       .then(res => {
         toast(`Saved Successfully`, {type: 'success'});
         // update and onle show reviews that are not decided yet

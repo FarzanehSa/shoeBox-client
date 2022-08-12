@@ -4,7 +4,7 @@ import useFormAdminProduct from "../../hooks/useFormAdminProduct";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import './AdminProduct.scss';
-import ProductsContext from '../../contexts/ProductsContext';
+import GeneralContext from '../../contexts/GeneralContext';
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -20,7 +20,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const LoadAddForm = ({onSubmit, onReset, sku}) => {
 
-  const {productSpec} = useContext(ProductsContext);
+  const {productSpec} = useContext(GeneralContext);
 
   const baseSize = productSpec.sizes.map(row => {
     return (

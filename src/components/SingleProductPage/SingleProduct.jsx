@@ -8,8 +8,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Rating from '@mui/material/Rating';
 
 import NotExistPage from "../NotExistPage";
-import ProductsContext from "../../contexts/ProductsContext";
-import CartContext from "../../contexts/CartContext";
+import GeneralContext from "../../contexts/GeneralContext";
 import Image from "./Image";
 import Colors from "./Colors";
 import Sizes from "./Sizes";
@@ -29,16 +28,24 @@ const SingleProduct = (props) => {
   const [avgRating, setAvgRating] = useState(0);
   const [resError, setResError] = useState(false)
 
-  const { products } = useContext(ProductsContext);
-  const { setCart, cart } = useContext(CartContext);
+  const { products, setCart, cart, url } = useContext(GeneralContext);
 
-  console.log("selectedSize", id)
-  console.log("selectedSize", products)
+  console.log("selectedSize", id);
+  console.log("selectedSize", products);
   useEffect(() => {
-    if (products) {
-      getProductById(id);
-    }
-  }, [products, id]);
+    axios.get(`${url}/api/products/${id}`).then((response) => {
+      // console.log(Number(response.data.averageRating.avg));
+      // handle success
+      if (response.data.errCode === 1005) {setResError(true)}
+      setAvailableSizes((prev) => response.data.availableSizes);
+      if (response.data.product) {setProduct((prev) => response.data.product);}
+      if (response.data.reviews) {setReviews((prev) => response.data.reviews);}
+      if (response.data.averageRating) {setAvgRating((prev) => Number(response.data.averageRating.avg));}
+    })
+    .catch(error => {
+      toast(`${error.message}`, {type: 'error'})
+    })
+  }, [products, id, url]);
 
   useEffect(() => {
     if (product.sku) {
@@ -81,7 +88,7 @@ const SingleProduct = (props) => {
   }, [products, product, id]);
 
   const getProductById = (id) => {
-    axios.get(`http://localhost:8100/api/products/${id}`).then((response) => {
+    axios.get(`${url}/api/products/${id}`).then((response) => {
       // console.log(Number(response.data.averageRating.avg));
       // handle success
       if (response.data.errCode === 1005) {setResError(true)}

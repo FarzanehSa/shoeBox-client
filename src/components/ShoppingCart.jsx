@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import CartContext from "../contexts/CartContext";
+import GeneralContext from "../contexts/GeneralContext";
 import StripeCheckout from "react-stripe-checkout";
 import Countdown from "react-countdown";
 import { toast } from "react-toastify";
@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 const ShoppingCart = ({modalRef, setCartClick}) => {
 
   const [cartCompleted, setCartCompleted] = useState(false);
-  const { cart, setCart } = useContext(CartContext);
+  const { cart, setCart, url } = useContext(GeneralContext);
 
   console.log("khaled", cart);
 
@@ -80,7 +80,7 @@ const ShoppingCart = ({modalRef, setCartClick}) => {
   async function handleToken(token, addresses) {
     let response;
     try {
-      response = await axios.post("http://localhost:8100/orders", {
+      response = await axios.post(`${url}/orders`, {
         token,
         cart,
       });
