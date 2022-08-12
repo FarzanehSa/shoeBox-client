@@ -33,7 +33,7 @@ const AdminInventory = () => {
       setInventoryData(response.data.inventoryInfo.map(row => ({...row, select: false})));
     })
     .catch(error => {
-      toast(`${error.message}`, {type: 'error'});
+      console.log(error.message);
     })
   }, [url])
 

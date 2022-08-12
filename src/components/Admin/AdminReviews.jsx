@@ -28,7 +28,7 @@ const AdminReviews = () => {
       setNewReviews(response.data.newReviews)
     })
     .catch(error => {
-      toast(`${error.message}`, {type: 'error'});
+      console.log(error.message);
     })
   }, [url]);
 

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import LinearProgress from "@mui/material/LinearProgress";
@@ -30,8 +30,8 @@ const SingleProduct = (props) => {
 
   const { products, setCart, cart, url } = useContext(GeneralContext);
 
-  console.log("selectedSize", id);
-  console.log("selectedSize", products);
+  // console.log("selectedSize", id);
+  // console.log("selectedSize", products);
   useEffect(() => {
     axios.get(`${url}/api/products/${id}`).then((response) => {
       // console.log(Number(response.data.averageRating.avg));
@@ -43,7 +43,7 @@ const SingleProduct = (props) => {
       if (response.data.averageRating) {setAvgRating((prev) => Number(response.data.averageRating.avg));}
     })
     .catch(error => {
-      toast(`${error.message}`, {type: 'error'})
+      console.log(error.message);
     })
   }, [products, id, url]);
 
@@ -98,7 +98,7 @@ const SingleProduct = (props) => {
       if (response.data.averageRating) {setAvgRating((prev) => Number(response.data.averageRating.avg));}
     })
     .catch(error => {
-      toast(`${error.message}`, {type: 'error'})
+      console.log(error.message);
     })
   };
 

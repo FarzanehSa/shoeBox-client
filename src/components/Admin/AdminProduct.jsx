@@ -30,7 +30,7 @@ const AdminProduct = (props) => {
         setAvailableSizes((prev) => response.data.availableSizes);
       })
       .catch(error => {
-        toast("Server Error", {type: 'error'})
+        console.log(error.message);
       })
       } else {
       setProduct({sku});

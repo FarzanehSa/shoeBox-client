@@ -42,6 +42,7 @@ function App() {
 
   // use this to change the navbar
   const matchDashboard = useMatch('/dashboard/*');
+  console.log(matchDashboard);
   
   useEffect(() => {
     // at first mount - get local storage cart info

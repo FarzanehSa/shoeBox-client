@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import axios from "axios";
 
 import GeneralContext from "../../contexts/GeneralContext";
@@ -25,7 +25,7 @@ const Dashboard = () => {
       setTotalSales(res.data.totalSales);
     })
     .catch(error => {
-      toast(`${error.message}`, {type: 'error'});
+      console.log(error.message);
     })
   }, [url]);
 
