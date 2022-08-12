@@ -5,7 +5,7 @@ const Homepage = () => {
   return (
     <div style={{lineHeight:'1.6'}}>
       <div className="image-container">
-        <img className="main-image" src="../main-image-3.png" alt="main-image" />
+        <img className="main-image" src="../main-image-3.png" alt="mainImage" />
         {/* <div className="text-in-image">Enjoy Our Collection</div> */}
       </div>
       <div className="text-under-image">

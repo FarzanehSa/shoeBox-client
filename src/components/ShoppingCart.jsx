@@ -159,7 +159,7 @@ const ShoppingCart = (props) => {
                               <div>
                                 <img
                                   src={item.image1}
-                                  alt="image"
+                                  alt="image1"
                                   width="220"
                                   height="220"
                                 />

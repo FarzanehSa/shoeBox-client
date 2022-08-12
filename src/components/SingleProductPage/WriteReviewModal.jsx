@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './Reviews.scss';
@@ -26,7 +26,7 @@ const WriteReviewModal = ({product, onClose, onSubmit}) => {
       <button onClick={onClose} className="btn-close-modal"><FontAwesomeIcon icon="fa-solid fa-xmark" /></button>
       <div className='item-info'>
         <div>
-          <img src={product.image1} alt="image" width="120" height="120" />
+          <img src={product.image1} alt="image1" width="120" height="120" />
         </div>
         <div>
           <h3>WRITE A REVIEW</h3>

@@ -16,7 +16,7 @@ export default function useFormAdminProduct(baseData, action, reset, baseSize) {
   }
 
   const handleChangeBarcode = (event) => {
-    const { id, name, value} = event.target;
+    const { id, name } = event.target;
     formSize[id][name] = event.target.value.trim();
     setFormSize([...formSize])
   }

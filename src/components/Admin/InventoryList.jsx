@@ -44,7 +44,7 @@ const InventoryList = ({inventoryData, product, onClickHandler}) => {
         </TableCell>
         <TableCell align='center' className={classSelect} >
           <div className='item-cell'>
-            <img src={row.image1} alt="image" width="80" height="80" />
+            <img src={row.image1} alt="image1" width="80" height="80" />
             <div className='details'>
               <span className='sku'>SKU: {row.sku}</span>
               <span>{row.name}</span>
