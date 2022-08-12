@@ -165,7 +165,7 @@ const SingleProduct = (props) => {
   // console.log("🍾💩🍺", reviews);    // 🚨🚨🚨
   // console.log("⭐️", avgRating);    // 🚨🚨🚨
 
-  return (
+  return products && (
     <div className="single-product">       
       {products.length !== 0 && Object.keys(product).length !== 0 &&
         <div className="single-box">
