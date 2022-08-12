@@ -27,7 +27,6 @@ import AdminReviews from './components/Admin/AdminReviews';
 import LoginModal from "./components/Admin/LoginModal";
 
 function App() {
-  console.log(REACT_APP_API_BASE_URL);
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState({});
   const [products, setProducts] = useState([]);
