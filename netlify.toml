@@ -14,3 +14,7 @@
 [build.environment]
   REACT_APP_API_BASE_URL = "https://shoe-box-api.herokuapp.com/"
   REACT_APP_WEBSOCKET_URL = "wss://shoe-box-api.herokuapp.com/"
+
+  # Redirects from what the browser requests to what we serve
+  /home              /
+  /dashboard         /dashboard
