@@ -17,6 +17,6 @@
 
   # Redirects from what the browser requests to what we serve
  [[redirects]]
-  from = "/old-path"
-  to = "/new-path"
+  from = "/dashboard"
+  to = "/dashboard"
   status = 301
