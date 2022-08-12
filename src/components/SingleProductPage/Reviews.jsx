@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
-// Modal.setAppElement('body');
 
 import Rating from '@mui/material/Rating';
 import './Reviews.scss';
 
-import LoginModal from '../Admin/LoginModal';
 import WriteReviewModal from './WriteReviewModal';
 import ThanksModal from './ThanksModal';
 

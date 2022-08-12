@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
-import { NavLink, Route, Routes, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import "./NavbarAdminPortal.scss";
 
@@ -46,7 +46,7 @@ const NavbarAdminPortal = (props) => {
           <FontAwesomeIcon className='bar' icon="fa-solid fa-bars" onClick={() => showSidebar()} />
         </NavLink>
         <div className='logo-to-name'>
-          <img className='logo-image' onClick={onClickLogo} src='../logo-dark.png' />
+          <img className='logo-image' onClick={onClickLogo} src='../logo-dark.png' alt="logo-m"/>
           <div className='logo' onClick={onClickLogo}>The Shoebox</div>
         </div>
         {user.name && <div className='admin-logo'>

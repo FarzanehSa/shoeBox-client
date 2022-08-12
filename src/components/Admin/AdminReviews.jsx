@@ -1,19 +1,11 @@
-import React, {useEffect, useState, useContext, useRef} from 'react';
-import { Route, Routes, useSearchParams, useLocation } from 'react-router-dom';
+import React, {useEffect, useState, useContext} from 'react';
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import LinearProgress from "@mui/material/LinearProgress";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import ProductsContext from "../../contexts/ProductsContext";
-
 import './AdminReviews.scss';
 
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import FormHelperText from '@mui/material/FormHelperText';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -92,7 +84,7 @@ const AdminReviews = () => {
         </TableCell>
         <TableCell align='center'>
           <div className='product-cell'>
-            <img src={row.image1} alt="image" width="80" height="80" />
+            <img src={row.image1} alt="image1" width="80" height="80" />
             <span>{row.name}</span>
           </div>
         </TableCell>

@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -15,7 +15,7 @@ import TextField from '@mui/material/TextField';
 
 const AdminProduct = (props) => {
 
-  const { user, products, productSpec } = useContext(ProductsContext);
+  const { user, products } = useContext(ProductsContext);
   const [sku, setSku] = useState("");
   const [product, setProduct] = useState({});
   const [availableSizes, setAvailableSizes] = useState([]);

@@ -1,23 +1,20 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
-import { NavLink, Route, Routes, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import "../styles/NavList.scss";
 
-import ProductsContext from "../contexts/ProductsContext";
 import CartContext from '../contexts/CartContext';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBagShopping, faPhone } from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from './ShoppingCart';
-import { useSlotProps } from '@mui/base';
 library.add(faBagShopping, faPhone);
 
 
 const NavList = (props) => {
 
   const { cart } = useContext(CartContext);
-  const { user, setUser } = useContext(ProductsContext);
 
   // console.log("in here", cart);
 
@@ -51,7 +48,7 @@ const NavList = (props) => {
     <div className="nav-bar">
       <div className="all-buttons">
         <div className='logo-to-name'>
-          <img className='logo-image' onClick={onClickLogo} src='../logo3.png' />
+          <img className='logo-image' onClick={onClickLogo} src='../logo3.png' alt='logo'/>
           <div className='logo' onClick={onClickLogo}>The Shoebox</div>
         </div>
         <div className='left-and-right-navs'>

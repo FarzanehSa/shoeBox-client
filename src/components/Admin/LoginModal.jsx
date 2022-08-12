@@ -1,11 +1,8 @@
-import React, {useEffect, useState, useContext} from 'react';
+import React from 'react';
 
 import TextField from '@mui/material/TextField';
-import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
 
 import useForm from "../../hooks/useForm";
-
 import './modal.scss';
 
 const LoginModal = (props) => {

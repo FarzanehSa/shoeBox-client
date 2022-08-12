@@ -1,6 +1,6 @@
 //  This componet is for product that shows in list of products
-import React, {useContext, useEffect, useState} from 'react';
-import { NavLink, useParams, useSearchParams } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Colors from '../components/SingleProductPage/Colors'
 

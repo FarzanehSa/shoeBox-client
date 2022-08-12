@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import useFormAdminProduct from "../../hooks/useFormAdminProduct";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -290,7 +290,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
                       <div className='img-preview'>
                         <img
                           src={formData.image2}
-                          alt="image"
+                          alt="image2"
                           width="80"
                           height="80"
                         />
@@ -319,7 +319,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
                       <div className='img-preview'>
                         <img
                           src={formData.image3}
-                          alt="image"
+                          alt="image3"
                           width="80"
                           height="80"
                         />

@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import ProductsContext from "../../contexts/ProductsContext";
 import OrderList from "./OrderList";

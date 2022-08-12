@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import useFormAdminProduct from "../../hooks/useFormAdminProduct";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -232,7 +232,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                       <div className='img-preview'>
                         <img
                           src={formData.image1}
-                          alt="image1"
+                          alt="pro-m1"
                           width="80"
                           height="80"
                         />
@@ -264,7 +264,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                       <div className='img-preview'>
                         <img
                           src={formData.image2}
-                          alt="image"
+                          alt="pro-m2"
                           width="80"
                           height="80"
                         />
@@ -293,7 +293,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                       <div className='img-preview'>
                         <img
                           src={formData.image3}
-                          alt="image"
+                          alt="pro-m3"
                           width="80"
                           height="80"
                         />

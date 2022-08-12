@@ -20,7 +20,7 @@ function Footer() {
             <button className="footer-buttons"><NavLink className="footer-navs" to="/about-us"> About Us </NavLink></button>
             <button className="footer-buttons"><NavLink className="footer-navs" to="/warranty"> Warranty</NavLink></button>
           </div>
-          <img className='logo-image' onClick={onClickLogo} src='../logo-dark.png' />
+          <img className='logo-image' onClick={onClickLogo} src='../logo-dark.png' alt="logo"/>
           <div className="left-right-content">
             <button className="footer-buttons"><NavLink className="footer-navs" to="/shipping"> Shipping</NavLink></button>
             <button className="footer-buttons"><NavLink className="footer-navs" to="/returns"> Returns</NavLink></button>
