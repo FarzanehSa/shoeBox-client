@@ -58,7 +58,7 @@ function App() {
     const url = process.env.REACT_APP_API_BASE_URL ? "https://shoe-box-api.herokuapp.com" : "http://localhost:8100"
 
     const f1 = axios.get(`${url}/api/products`);
-    const f2 = axios.get('http://localhost:8100/api/specification')
+    const f2 = axios.get(`${url}/api/specification`)
 
     Promise.all([f1, f2])
       .then(([r1, r2]) => {
