@@ -16,7 +16,7 @@ const Product = ({product, colorOptions}) => {
       return (row.id === productX.id) ? {...row, selected: true} : {...row, selected: false}
     });
     setColorsFamily(colors);
-  }, [productX]);
+  }, [productX, colorOptions]);
 
   const changeColorHandler = (pro) => {
     setProductX(pro);

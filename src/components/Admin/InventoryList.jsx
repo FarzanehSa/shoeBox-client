@@ -20,7 +20,7 @@ const InventoryList = ({inventoryData, product, onClickHandler}) => {
   useEffect(() => {
     const productIndex = inventoryData.indexOf(product);
     productIndex === -1 ? scroll(0) : scroll(productIndex);
-  }, [product]);
+  }, [product, inventoryData]);
 
   const scroll = (index) =>
     barcodesRef && barcodesRef.current[index] && barcodesRef.current[index].scrollIntoView({ behavior: "smooth", block: "center"});

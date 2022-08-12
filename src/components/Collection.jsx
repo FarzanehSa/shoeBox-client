@@ -42,8 +42,8 @@ const Collection = () => {
       const priceString = searchParams.get("searchedPrice").split(",");
       setPriceFilter([Number(priceString[0]), Number(priceString[1])]);
     }
-  }, []);
-
+  }, [searchParams]);
+  
   // get the selection base on all possible filters
   useEffect(() => {
     setSelection((prev) =>

@@ -39,7 +39,7 @@ function App() {
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [loginError, setLoginError] = useState("");
-  const [inventoryData, setInventoryData] = useState([]);
+
 
   // use this to change the navbar
   const matchDashboard = useMatch('/dashboard/*');
@@ -87,7 +87,7 @@ function App() {
     } else {
       setModalIsOpen(false)
     }
-  }, [user]);
+  }, [user, matchDashboard]);
 
   const addProduct = (newProduct, newSizes) => {
     axios.post('http://localhost:8100/api/products', {product: newProduct, sizeData: newSizes})
@@ -128,7 +128,7 @@ function App() {
     })
   }
 
-  function openModal() {setModalIsOpen(true);}
+  // function openModal() {setModalIsOpen(true);}
 
   function closeModal() {setModalIsOpen(false);}
 
@@ -140,35 +140,6 @@ function App() {
     } else {
       setLoginError("Login info is not correct!")
     }
-  }
-
-  const getInventoryData = () => {
-    axios.get(`http://localhost:8100/api/inventory`)
-    .then((response) => {
-      setInventoryData(response.data.inventoryInfo.map(row => ({...row, select: false})));
-    })
-    .catch(error => {
-      toast(`${error.message}`, {type: 'error'});
-    })
-  }
-
-  const addToInvetory = (barcode, newQty) => {
-    axios.post('http://localhost:8100/api/inventory', {barcode, newQty})
-    .then(res => {
-      const updatedInvetoryLine = res.data;
-      toast(`Inventory update successful!`, {type: 'success'});
-      const newInvData = inventoryData.map(row => {
-        if (row.barcode === updatedInvetoryLine.barcode) {
-          row.qty = updatedInvetoryLine.quantity;
-          row.select = false;
-        }
-        return row;
-      })
-      setInventoryData(newInvData);
-    })
-    .catch(error => {
-      toast(`${error.message}`, {type: 'error'});
-    })
   }
 
   // console.log('👟👞🥾', products);    // 🚨🚨🚨
@@ -207,7 +178,7 @@ function App() {
             <Route path="/returns" element={<Returns />} />
             <Route path="/dashboard" element={<Dashboard user={user} setUser={setUser}/>} />
             <Route path="/dashboard/product" element={<AdminProduct onEdit={editProduct} onAdd={addProduct}/>} />
-            <Route path="/dashboard/inventory" element={<AdminInventory inventoryData={inventoryData} onAdd={addToInvetory} onGetInventory={getInventoryData} setInventoryData={setInventoryData} />} />
+            <Route path="/dashboard/inventory" element={<AdminInventory />} />
             <Route path="/dashboard/orders" element={<AdminOrders />} />
             <Route path="/dashboard/reviews" element={<AdminReviews />} />
           </Routes>

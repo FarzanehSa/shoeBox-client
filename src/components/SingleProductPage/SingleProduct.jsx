@@ -32,12 +32,13 @@ const SingleProduct = (props) => {
   const { products } = useContext(ProductsContext);
   const { setCart, cart } = useContext(CartContext);
 
-  // console.log("selectedSize", selectedSize)
+  console.log("selectedSize", id)
+  console.log("selectedSize", products)
   useEffect(() => {
     if (products) {
       getProductById(id);
     }
-  }, []);
+  }, [products, id]);
 
   useEffect(() => {
     if (product.sku) {

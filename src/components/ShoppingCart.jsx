@@ -10,56 +10,59 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./ShoppingCart.scss";
 import "react-toastify/dist/ReactToastify.css";
 
-const ShoppingCart = (props) => {
+const ShoppingCart = ({modalRef, setCartClick}) => {
+
   const [cartCompleted, setCartCompleted] = useState(false);
   const { cart, setCart } = useContext(CartContext);
-  // console.log("khaled", cart);
 
-  useEffect(() => {
-    // console.log("cart", cart);
-    axios.get("http://localhost:8100/orders/validation").then((res) => {
-      const updatedInfo = res.data.updatedInfo;
-      // console.log(updatedInfo);
-      const updateCart = cart.map((product) => {
-        const goodData = updatedInfo.filter(
-          (row) => row.barcode === product.barcode
-        )[0];
+  console.log("khaled", cart);
 
-        if (goodData.qty > 0 && product.quantity > goodData.qty) {
-          return {
-            ...product,
-            availability: goodData.qty,
-            price: goodData.price,
-            quantity: goodData.qty,
-          };
-        } else {
-          return {
-            ...product,
-            availability: goodData.qty,
-            price: goodData.price,
-          };
-        }
-      });
-      setCart(updateCart.filter((row) => row.availability !== 0));
-    });
+  // useEffect(() => {
+  //   // console.log("cart", cart);
+  //   axios.get("http://localhost:8100/orders/validation").then((res) => {
+  //     const updatedInfo = res.data.updatedInfo
+
+  //     console.log(updatedInfo);
+  //     const updateCart = cart.map((product) => {
+  //       const goodData = updatedInfo.filter(
+  //         (row) => row.barcode === product.barcode
+  //       )[0];
+
+  //       if (goodData.qty > 0 && product.quantity > goodData.qty) {
+  //         return {
+  //           ...product,
+  //           availability: goodData.qty,
+  //           price: goodData.price,
+  //           quantity: goodData.qty,
+  //         };
+  //       } else {
+  //         return {
+  //           ...product,
+  //           availability: goodData.qty,
+  //           price: goodData.price,
+  //         };
+  //       }
+  //     });
+  //     setCart(updateCart.filter((row) => row.availability !== 0));
+  //   });
   
-  }, []);
+  // }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      props.setCartClick(false);
+      setCartClick(false);
     },600000)
     return (() => {
       clearTimeout(timeout);
     })
-  }, [cart])
+  }, [cart, setCartClick])
     
 
   const onRemoveClick = (barcode) => {
     setCart((pre) => pre.filter((item) => !(barcode === item.barcode)));
     if (cart.length === 1) {
       // we choose === 1 because the setState is asynchronous
-      props.setCartClick(false);
+      setCartClick(false);
     }
   };
 
@@ -100,7 +103,7 @@ const ShoppingCart = (props) => {
   // console.log('stripe', process.env.REACT_APP_STRIPE_KEY);
 
   return (
-    <div ref={props.modalRef} className="overlay-style">
+    <div ref={modalRef} className="overlay-style">
       <div className="background">
         {cartCompleted ? (
           <div className="notes-and-shopping-button">
@@ -112,7 +115,7 @@ const ShoppingCart = (props) => {
             <button
               className="continue-shopping"
               onClick={() => {
-                props.setCartClick(false);
+                setCartClick(false);
               }}
             >
               Back to The Shoebox
@@ -127,7 +130,7 @@ const ShoppingCart = (props) => {
                   <button
                     className="top-continue-shopping"
                     onClick={() => {
-                      props.setCartClick(false);
+                      setCartClick(false);
                     }}
                   >
                     Continue Shopping
@@ -256,7 +259,7 @@ const ShoppingCart = (props) => {
                       <button
                         className="continue-shopping"
                         onClick={() => {
-                          props.setCartClick(false);
+                          setCartClick(false);
                         }}
                       >
                         Continue Shopping
