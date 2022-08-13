@@ -17,36 +17,36 @@ const ShoppingCart = ({modalRef, setCartClick}) => {
 
   console.log("khaled", cart);
 
-  // useEffect(() => {
-  //   // console.log("cart", cart);
-  //   axios.get("http://localhost:8100/orders/validation").then((res) => {
-  //     const updatedInfo = res.data.updatedInfo
+  useEffect(() => {
+    // console.log("cart", cart);
+    axios.get("http://localhost:8100/orders/validation").then((res) => {
+      const updatedInfo = res.data.updatedInfo
 
-  //     console.log(updatedInfo);
-  //     const updateCart = cart.map((product) => {
-  //       const goodData = updatedInfo.filter(
-  //         (row) => row.barcode === product.barcode
-  //       )[0];
+      console.log(updatedInfo);
+      const updateCart = cart.map((product) => {
+        const goodData = updatedInfo.filter(
+          (row) => row.barcode === product.barcode
+        )[0];
 
-  //       if (goodData.qty > 0 && product.quantity > goodData.qty) {
-  //         return {
-  //           ...product,
-  //           availability: goodData.qty,
-  //           price: goodData.price,
-  //           quantity: goodData.qty,
-  //         };
-  //       } else {
-  //         return {
-  //           ...product,
-  //           availability: goodData.qty,
-  //           price: goodData.price,
-  //         };
-  //       }
-  //     });
-  //     setCart(updateCart.filter((row) => row.availability !== 0));
-  //   });
+        if (goodData.qty > 0 && product.quantity > goodData.qty) {
+          return {
+            ...product,
+            availability: goodData.qty,
+            price: goodData.price,
+            quantity: goodData.qty,
+          };
+        } else {
+          return {
+            ...product,
+            availability: goodData.qty,
+            price: goodData.price,
+          };
+        }
+      });
+      setCart(updateCart.filter((row) => row.availability !== 0));
+    });
+  }, []); // eslint-disable-line
   
-  // }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
