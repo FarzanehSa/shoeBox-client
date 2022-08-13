@@ -2,13 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 // import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 import LinearProgress from "@mui/material/LinearProgress";
 import Rating from '@mui/material/Rating';
 
-import NotExistPage from "../NotExistPage";
 import GeneralContext from "../../contexts/GeneralContext";
+import NotExistPage from "../NotExistPage";
 import Image from "./Image";
 import Colors from "./Colors";
 import Sizes from "./Sizes";
@@ -30,22 +29,12 @@ const SingleProduct = (props) => {
 
   const { products, setCart, cart, url } = useContext(GeneralContext);
 
-  // console.log("selectedSize", id);
-  // console.log("selectedSize", products);
+  // console.log("selectedSize", selectedSize)
   useEffect(() => {
-    axios.get(`${url}/api/products/${id}`).then((response) => {
-      // console.log(Number(response.data.averageRating.avg));
-      // handle success
-      if (response.data.errCode === 1005) {setResError(true)}
-      setAvailableSizes((prev) => response.data.availableSizes);
-      if (response.data.product) {setProduct((prev) => response.data.product);}
-      if (response.data.reviews) {setReviews((prev) => response.data.reviews);}
-      if (response.data.averageRating) {setAvgRating((prev) => Number(response.data.averageRating.avg));}
-    })
-    .catch(error => {
-      console.log(error.message);
-    })
-  }, [products, id, url]);
+    if (products) {
+      getProductById(id);
+    }
+  }, [url]); // eslint-disable-line
 
   useEffect(() => {
     if (product.sku) {

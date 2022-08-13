@@ -1,28 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
-import GeneralContext from "../contexts/GeneralContext";
-import StripeCheckout from "react-stripe-checkout";
 import Countdown from "react-countdown";
 import { toast } from "react-toastify";
 import axios from "axios";
+import StripeCheckout from "react-stripe-checkout";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import GeneralContext from "../contexts/GeneralContext";
+
 import "./ShoppingCart.scss";
-import "react-toastify/dist/ReactToastify.css";
 
-const ShoppingCart = ({modalRef, setCartClick}) => {
-
+const ShoppingCart = (props) => {
   const [cartCompleted, setCartCompleted] = useState(false);
-  const { cart, setCart, url } = useContext(GeneralContext);
-
-  console.log("khaled", cart);
+  const { cart, setCart, url} = useContext(GeneralContext);
+  // console.log("khaled", cart);
 
   useEffect(() => {
     // console.log("cart", cart);
-    axios.get("http://localhost:8100/orders/validation").then((res) => {
-      const updatedInfo = res.data.updatedInfo
-
-      console.log(updatedInfo);
+    axios.get(`${url}/orders/validation`).then((res) => {
+      const updatedInfo = res.data.updatedInfo;
+      // console.log(updatedInfo);
       const updateCart = cart.map((product) => {
         const goodData = updatedInfo.filter(
           (row) => row.barcode === product.barcode
@@ -45,24 +42,23 @@ const ShoppingCart = ({modalRef, setCartClick}) => {
       });
       setCart(updateCart.filter((row) => row.availability !== 0));
     });
-  }, []); // eslint-disable-line
-  
+  }, [url]); // eslint-disable-line
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setCartClick(false);
+      props.setCartClick(false);
     },600000)
     return (() => {
       clearTimeout(timeout);
     })
-  }, [cart, setCartClick])
+  }, [cart]); // eslint-disable-line
     
 
   const onRemoveClick = (barcode) => {
     setCart((pre) => pre.filter((item) => !(barcode === item.barcode)));
     if (cart.length === 1) {
       // we choose === 1 because the setState is asynchronous
-      setCartClick(false);
+      props.setCartClick(false);
     }
   };
 
@@ -88,14 +84,15 @@ const ShoppingCart = ({modalRef, setCartClick}) => {
     } catch (error) {
       // console.log('stripe response error', error);
     }
+    
     // console.log('stripe response', response)
-    if (response.status === 200) {
+    if (response.data.status === 'success') {
       toast("Successful Payment", { type: "success" });
       setCart([]);
       setCartCompleted(true);
       // POST DATA to DB
       // axios.post('/', { cart })
-    } else {
+    } else if (response.data.status === 'failure'){
       toast("Payment is not successful", { type: "error" });
     }
   }
@@ -103,7 +100,7 @@ const ShoppingCart = ({modalRef, setCartClick}) => {
   // console.log('stripe', process.env.REACT_APP_STRIPE_KEY);
 
   return (
-    <div ref={modalRef} className="overlay-style">
+    <div ref={props.modalRef} className="overlay-style">
       <div className="background">
         {cartCompleted ? (
           <div className="notes-and-shopping-button">
@@ -115,7 +112,7 @@ const ShoppingCart = ({modalRef, setCartClick}) => {
             <button
               className="continue-shopping"
               onClick={() => {
-                setCartClick(false);
+                props.setCartClick(false);
               }}
             >
               Back to The Shoebox
@@ -130,7 +127,7 @@ const ShoppingCart = ({modalRef, setCartClick}) => {
                   <button
                     className="top-continue-shopping"
                     onClick={() => {
-                      setCartClick(false);
+                      props.setCartClick(false);
                     }}
                   >
                     Continue Shopping
@@ -259,7 +256,7 @@ const ShoppingCart = ({modalRef, setCartClick}) => {
                       <button
                         className="continue-shopping"
                         onClick={() => {
-                          setCartClick(false);
+                          props.setCartClick(false);
                         }}
                       >
                         Continue Shopping

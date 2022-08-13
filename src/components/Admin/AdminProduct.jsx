@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import TextField from '@mui/material/TextField';
 
 import GeneralContext from "../../contexts/GeneralContext";
 import { findProductBySku } from '../../helper/findProductBySku';
@@ -10,8 +11,6 @@ import LoadProductForEdit from './LoadProductForEdit';
 import LoadAddForm from './LoadAddForm';
 
 import './AdminProduct.scss';
-
-import TextField from '@mui/material/TextField';
 
 const AdminProduct = (props) => {
 

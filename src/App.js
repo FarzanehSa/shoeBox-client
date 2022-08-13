@@ -3,6 +3,7 @@ import { Route, Routes, useMatch } from 'react-router-dom';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import GeneralContext from './contexts/GeneralContext';
 
@@ -26,6 +27,7 @@ import AdminReviews from './components/Admin/AdminReviews';
 import LoginModal from "./components/Admin/LoginModal";
 
 function App() {
+
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState({});
   const [products, setProducts] = useState([]);
@@ -37,13 +39,16 @@ function App() {
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [loginError, setLoginError] = useState("");
-  const [url, setUrl] = useState('')
+  const [url, setUrl] = useState("https://shoe-box-api.herokuapp.com");
+  const [title, setTitle] = useState("The Shoe Box")
 
-
+  
   // use this to change the navbar
   const matchDashboard = useMatch('/dashboard/*');
-  
+
   useEffect(() => {
+    console.log('⭐️ v.01');
+
     // at first mount - get local storage cart info
     const cart = JSON.parse(localStorage.getItem('cart-info'));
     if (cart) {
@@ -51,16 +56,18 @@ function App() {
     }
 
     const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {setUser(user);}
-
+    if (user) {
+      setUser(user);
+    }
+    
     if (process.env.REACT_APP_API_BASE_URL) {
       setUrl("https://shoe-box-api.herokuapp.com");
     } else {
-      setUrl("http://localhost:8100");
+      setUrl(`http://localhost:${process.env.REACT_APP_SERVER_PORT || 8100}`);
     }
 
     const f1 = axios.get(`${url}/api/products`);
-    const f2 = axios.get(`${url}/api/specification`)
+    const f2 = axios.get(`${url}/api/specification`);
 
     Promise.all([f1, f2])
       .then(([r1, r2]) => {
@@ -73,7 +80,7 @@ function App() {
         setProductSpec({categories,styles, colors, sizes});
       });
 
-  }, [url]);
+  }, []); // eslint-disable-line
 
   // set local storage when cart state changed!
   useEffect(() => {
@@ -81,15 +88,26 @@ function App() {
   }, [cart]);
 
   useEffect(() => {
-    localStorage.setItem('user', JSON.stringify(user));
+    document.title = title;
+  },[title]);
 
+  useEffect(() => {
+    if (matchDashboard) {
+      setTitle("Shoe Box Dashboard");
+    } else {
+      setTitle("The Shoe Box");
+    }
+  },[matchDashboard]);
+
+  useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(user));
     // in /dashboard url, pop up modal, if there is no admin user
     if (matchDashboard && !user.name) {
       setModalIsOpen(true);
     } else {
       setModalIsOpen(false)
     }
-  }, [user, matchDashboard]);
+  }, [user]); // eslint-disable-line
 
   const addProduct = (newProduct, newSizes) => {
     axios.post(`${url}/api/products`, {product: newProduct, sizeData: newSizes})
@@ -151,7 +169,8 @@ function App() {
 
   return (
     <div>
-      <GeneralContext.Provider value={{ products, productSpec, user, setUser, setCart, cart, url }}>
+      <GeneralContext.Provider value={{ products, productSpec, user, setUser, setCart, cart, url}}>
+         
         {matchDashboard && !user.name && <NavbarAdminPortal zIndex={0} />}
         {matchDashboard && user.name && <NavbarAdminPortal user={user} zIndex={1100} />}
         {!matchDashboard && <NavList/>}
@@ -182,6 +201,7 @@ function App() {
           <Route path="/dashboard/reviews" element={<AdminReviews />} />
         </Routes>
         <Footer />
+
       </GeneralContext.Provider>
     </div>
   );

@@ -1,10 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import axios from "axios";
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-import GeneralContext from "../../contexts/GeneralContext";
-import './AdminReviews.scss';
 
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
@@ -16,12 +12,16 @@ import TableRow from '@mui/material/TableRow';
 import Checkbox from '@mui/material/Checkbox';
 import { pink } from '@mui/material/colors';
 
+import GeneralContext from "../../contexts/GeneralContext";
+
+import './AdminReviews.scss';
+
 const AdminReviews = () => {
 
   const { user, url } = useContext(GeneralContext);
   const [newReviews, setNewReviews] = useState([])
 
-  console.log('😈', newReviews);
+  // console.log('😈', newReviews);
   useEffect(() => {
     axios.get(`${url}/reviews`)
     .then((response) => {

@@ -1,7 +1,5 @@
 import React, {useEffect, useRef} from 'react';
 
-import './AdminInventory.scss';
-
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,6 +7,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+
+import './AdminInventory.scss';
 
 const InventoryList = ({inventoryData, product, onClickHandler}) => {
 
@@ -20,7 +20,7 @@ const InventoryList = ({inventoryData, product, onClickHandler}) => {
   useEffect(() => {
     const productIndex = inventoryData.indexOf(product);
     productIndex === -1 ? scroll(0) : scroll(productIndex);
-  }, [product, inventoryData]);
+  }, [product]); // eslint-disable-line
 
   const scroll = (index) =>
     barcodesRef && barcodesRef.current[index] && barcodesRef.current[index].scrollIntoView({ behavior: "smooth", block: "center"});

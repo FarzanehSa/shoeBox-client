@@ -46,7 +46,7 @@ const NavbarAdminPortal = (props) => {
           <FontAwesomeIcon className='bar' icon="fa-solid fa-bars" onClick={() => showSidebar()} />
         </NavLink>
         <div className='logo-to-name'>
-          <img className='logo-image' onClick={onClickLogo} src='../logo-dark.png' alt="logo-m"/>
+          <img className='logo-image' onClick={onClickLogo} src='../logo-dark.png' alt="logo"/>
           <div className='logo' onClick={onClickLogo}>The Shoebox</div>
         </div>
         {user.name && <div className='admin-logo'>

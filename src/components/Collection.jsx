@@ -3,23 +3,20 @@ import { useParams, useSearchParams } from "react-router-dom";
 
 import LinearProgress from "@mui/material/LinearProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import "../styles/Collection.scss";
-
-import GeneralContext from "../contexts/GeneralContext";
-import Product from "./Product";
-import ItemNotFound from "./ItemNotFound";
-
-import { getProducts } from "../helper/getProducts";
-import { getStyles } from "../helper/getStyles";
-import { getColors } from "../helper/getColors";
-
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Slider from "@mui/material/Slider";
 
+import GeneralContext from "../contexts/GeneralContext";
+import Product from "./Product";
+import ItemNotFound from "./ItemNotFound";
+import { getProducts } from "../helper/getProducts";
+import { getStyles } from "../helper/getStyles";
+import { getColors } from "../helper/getColors";
+
+import "../styles/Collection.scss";
 
 const Collection = () => {
   const [selection, setSelection] = useState([]);
@@ -42,8 +39,8 @@ const Collection = () => {
       const priceString = searchParams.get("searchedPrice").split(",");
       setPriceFilter([Number(priceString[0]), Number(priceString[1])]);
     }
-  }, [searchParams]);
-  
+  }, []); // eslint-disable-line
+
   // get the selection base on all possible filters
   useEffect(() => {
     setSelection((prev) =>

@@ -2,10 +2,6 @@ import React, {useContext} from 'react';
 import useFormAdminProduct from "../../hooks/useFormAdminProduct";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import './AdminProduct.scss';
-import GeneralContext from '../../contexts/GeneralContext';
-
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
@@ -17,6 +13,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import CircularProgress from '@mui/material/CircularProgress';
 
+import GeneralContext from '../../contexts/GeneralContext';
+
+import './AdminProduct.scss';
 
 const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
 
