@@ -17,7 +17,7 @@ function ContactUs(props) {
           <div className='last-name'>Akhounsadegh</div>
           <div className='job'>Full Stack Web Developer</div>
           <div style={{ paddingTop: '5px' }}>
-            <a href='https://www.linkedin.com/in/farzaneh-sadegh-439b48ba'><FontAwesomeIcon icon="fa-brands fa-linkedin" className='contact-icon' /></a>
+            <a href='https://www.linkedin.com/in/farzanehsadegh/'><FontAwesomeIcon icon="fa-brands fa-linkedin" className='contact-icon' /></a>
             <a href='https://github.com/FarzanehSa'> <FontAwesomeIcon icon="fa-brands fa-github" className='contact-icon' /></a>
           </div>
         </div>
