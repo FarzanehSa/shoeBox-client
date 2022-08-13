@@ -1,0 +1,67 @@
+.contact-overlay-style {
+  font-family: Raleway, sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.team {
+  font-size: 25px;
+  margin-bottom: 5em;
+  letter-spacing: 0.03em;
+  text-decoration: underline;
+}
+.info {
+  // border: 1px solid grey;
+  // box-shadow: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-background {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  min-height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+  // overflow-y: scroll;
+  // overscroll-behavior: contain;
+}
+
+.contact-img {
+  // margin: 1em;
+  height: 170px;
+  width: 195px;
+  border-radius: 50%;
+  margin-bottom: 1em;
+}
+
+.name {
+  font-size: 19px;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
+.last-name {
+  font-size: 21px;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
+.job {
+  color: grey;
+}
+
+.contact-icon {
+  color: blue;
+  font-size: 22px;
+}
