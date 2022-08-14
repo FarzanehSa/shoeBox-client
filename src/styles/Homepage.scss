@@ -1,9 +1,13 @@
 @import "src/styles/variables.scss";
 
 .homepage-layout {
-  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
   .image-container {
-    position: relative;
     display: flex;
     justify-content: center;
   }
@@ -95,12 +99,12 @@
     }
 
     .data-title {
-      font-size: 0.9em;
-      text-align: justify;
+      font-size: 0.85em;
+      text-align:justify;
     }
   
     .paragraph-data {
-      font-size: 0.8em;
+      font-size: 0.75em;
       padding-top: 0.3em;
       padding-bottom: 0.3em;
     }
@@ -114,7 +118,7 @@
       }
   
       .location, .hours, .l-h-info {
-        font-size: 0.8em;
+        font-size: 0.7em;
       }
     }
   }

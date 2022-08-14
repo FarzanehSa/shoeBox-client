@@ -4,6 +4,7 @@
   // border: $test;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: 8%;
   width: 100%;
 
@@ -12,14 +13,21 @@
     align-self: center;
     width: 80%;
   }
+
+  .side-image-single-product {
+    // border: $test;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+  }
 }
 
 .arrow-b {
   border            : none;
   color             : goldenrod;
   background-color  : transparent;
-  height: 10%;
-  width: 5%;
   align-self: center;
   font-size: 2em;
 
@@ -29,5 +37,16 @@
   }
 }
 
+@media only screen and (max-width: 400px) {
 
+  .image-box {
 
+    .image-single-product {
+      width: 75%;
+    }
+
+    .arrow-b {
+      font-size: 1em;
+      }
+  }
+}

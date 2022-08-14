@@ -16,10 +16,10 @@
   }
 }
 
-// .product-image {
-  // border-radius: 40%;
-  // background: transparent;
-// }
+.product-image {
+  width: 317px;
+  height: 317px;
+}
 
 .name-and-price {
   font-family: Raleway, sans-serif;
@@ -47,4 +47,15 @@ p {
   font-size: 14px;
   margin-bottom: 0.7em;
   margin-top: 5px;
+}
+
+@media only screen and (max-width: 400px) {
+
+  .product {
+
+    .product-image {
+      width: 200px;
+      height: 200px;
+    }
+  }
 }

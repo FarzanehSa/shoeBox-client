@@ -181,27 +181,29 @@ const SingleProduct = (props) => {
                   ${(product.price / 100).toFixed(2)}
                 </div>
               </div>
-              <div className="product-color">
-                <span className="color-title">Color: {product.color}</span>
-                <Colors colorsFamily={colorsFamily} onColor={changeColorHandler} />
+              <div className="p-color-size">
+                <div className="product-color">
+                  <span className="color-title">Color: {product.color}</span>
+                  <Colors colorsFamily={colorsFamily} onColor={changeColorHandler} />
+                </div>
+                <div className="product-size">
+                  <span className="product-size-title">Size:</span>
+                  <Sizes
+                    availableSizes={availableSizes}
+                    onSelectSize={onSelectSize}
+                    select={selectedSize} /*onAdd={onAdd}*/
+                  />
+                </div>
+                <button
+                  className="add-to-cart tool-tip"
+                  disabled={!selectedSize.id}
+                  onClick={addToCart}
+                >
+                  Add To Cart
+                  <br />
+                  <span className={selectedSize.id ? "tool-tip-text-disabled" : "tool-tip-text"}>Please Choose Size!</span>
+                </button>
               </div>
-              <div className="product-size">
-                <span className="product-size-title">Size:</span>
-                <Sizes
-                  availableSizes={availableSizes}
-                  onSelectSize={onSelectSize}
-                  select={selectedSize} /*onAdd={onAdd}*/
-                />
-              </div>
-              <button
-                className="add-to-cart tool-tip"
-                disabled={!selectedSize.id}
-                onClick={addToCart}
-              >
-                Add To Cart
-                <br />
-                <span className={selectedSize.id ? "tool-tip-text-disabled" : "tool-tip-text"}>Please Choose Size!</span>
-              </button>
               <br />
             </div>
           </div>

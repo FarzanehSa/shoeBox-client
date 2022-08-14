@@ -54,6 +54,14 @@
   justify-content: flex-start;
 }
 
+.p-color-size {
+  border: $test;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .product-name {
   font-family: Raleway, sans-serif;
   font-size: 1.5rem;
@@ -70,17 +78,17 @@
   margin-bottom: 1em;
 }
 
-.product-color {
-  margin-bottom: 2em;
-}
 
 .product-color, .product-size {
-  // border: $test1;
+  border: $test1;
   width: 50%;
-  margin-inline: auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.product-color {
+  margin-bottom: 2em;
 }
 
 .color-title {

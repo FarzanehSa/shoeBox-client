@@ -26,7 +26,7 @@ const Product = ({product, colorOptions}) => {
     <div className='product'>
       <NavLink  to={`${productX.id}`}>
       <p>
-        <img className='product-image' src={`${productX.image1}`} alt="pro" width="317" height="317"/>
+        <img className='product-image' src={`${productX.image1}`} alt="pro"/>
       </p>
       </NavLink>
       <Colors colorsFamily={colorsFamily} onColor={changeColorHandler} />
