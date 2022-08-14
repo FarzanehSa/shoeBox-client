@@ -77,5 +77,58 @@
     background-image: linear-gradient( #f9484a, #fbd72b);
     color: black;
   }
+}
+
+.btn-go-back-login {
+  font-weight: 450;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-top: 1em;
+  color: orangered;
+  cursor: pointer;
+  padding: 0.6em 1.2em;
+  border: none;
+  background: transparent;
+  &:hover {
+    color: white
+  }
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+
+  .login-modal {
+    height: 60%;
+    width: 70%;
+    .left-section {
+      display: none;
+    }
+    .right-section {
+      width: 100%;
+    }
+  
+    .btn-go-back-login {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .login-modal {
+
+    .title {
+      font-size: 1.3em;
+    }
+
+    .line-2 {
+      font-size: 0.6em;
+    }
+
+    .btn-go-back-login {
+      font-size: 1.1em;
+    }
+  }
+
 
 }

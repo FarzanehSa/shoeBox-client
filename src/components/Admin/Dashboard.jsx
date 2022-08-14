@@ -50,24 +50,24 @@ const Dashboard = () => {
       {user.name && 
         <div className="admin-dashboard-page">
           <div className="two-bar-row top-two">
-            <div className="barchart">
+            <div className="barchart pr-chart">
               {barProducts.length !==0 &&
                 <BarChartProduct barData={barProducts} />
               }
             </div>
-            <div className="barchart">
+            <div className="barchart sal-chart">
               {barSales.length !==0 &&
                 <BarChartSale barData={barSales} />
               }
             </div>
           </div>
           <div className="two-bar-row">
-            <div className="barchart">
+            <div className="barchart co-chart">
               {barColors.length !==0 &&
                 <BarChartColor barData={barColors} />
               }
             </div>
-            <div className="barchart">
+            <div className="barchart siz-chart">
               {barSizes.length !==0 &&
                 <BarChartSize barData={barSizes} />
               }

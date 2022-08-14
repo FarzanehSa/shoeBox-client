@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 
 import TextField from '@mui/material/TextField';
 
@@ -9,6 +10,7 @@ const LoginModal = (props) => {
 
   const baseFormData = { name: "", password: "" };
   const { formData, handleChange, handleSubmit } = useForm(baseFormData, props.onLogin);
+  const navigate = useNavigate();
 
   return (
     <div className='login-modal'>
@@ -55,7 +57,7 @@ const LoginModal = (props) => {
             </div>
             {props.msg && <span className='login-error'>{props.msg}</span>}
             <button type="submit" className="login-button"> Login </button>
-
+            <button type="button" className="btn-go-back-login" onClick={() => navigate(-1)}>Go Back</button>
         </form>
       </div>
     </div>

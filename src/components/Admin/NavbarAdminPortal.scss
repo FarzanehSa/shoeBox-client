@@ -136,7 +136,60 @@
   &:hover {
     color: goldenrod;
   }
+  .admin-logo-img {
+    height: 70px;
+    width: 70px;
+  }
 }
 
 
 
+@media only screen and (max-width: 500px) {
+
+  .nav-bar-admin {
+    
+    .logo-to-name {
+      .logo-image {
+        margin: 0.3em 0.5em 0.3em 1em;
+        width: 80px;
+      }
+      .logo {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .menu-bars {
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  .nav-menu {
+    width: 180px;
+    height: 100hv;
+    left: -100%;
+    padding-top: 20px;
+  
+    span {
+      margin-left: 12px;
+    }
+  }
+  .nav-text {
+    // border: $test1;
+    padding: 20px 0px 8px 16px;
+    height: 70px;
+  }
+  .nav-text a {
+    font-size: 15px;
+    padding: 0 5px;
+  }
+
+  .admin-logo {
+    font-size: 1px;
+
+    .admin-logo-img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+}

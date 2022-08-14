@@ -102,34 +102,31 @@ const AdminInventory = () => {
     <div className='admin-inventory-page-main'>
       {user.name && 
         <div className='admin-inventory-page'>
-          <h3>Enter product's barcode or select by clicking on it's row to Update Inventory!</h3>
+          <p className='admin-title'>Enter product's barcode or select by clicking on it's row to Update Inventory!</p>
           <div className='search-barcode-set-qty'>
-            <div className='search-barcode'>
-              <form onSubmit={onSearch} className='search-barcode-form'>
-                <div className='barcode-input'>
-                  <TextField
-                    required
-                    label="Barcode"
-                    id="barcode"
-                    name="barcode"
-                    value={barcode.trim()}
-                    onChange={(event) => setBarcode(event.target.value)}
-                    variant="standard"
-                    disabled={Object.keys(product).length !== 0}
-                    margin="normal"
-                    sx={{ m: 0, width: '18ch' }}
-                  />
-                </div>
-                <button type="submit" className='btn-admin-page btn-inventory-search'><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> Search</button>
-              </form>
-              <div>
-                <button onClick={onResetSearch} className='btn-admin-page btn-inventory-reset'>Reset</button>
+            <form onSubmit={onSearch} className='search-barcode-form'>
+              <div className='barcode-input'>
+                <TextField
+                  required
+                  label="Barcode"
+                  id="barcode"
+                  name="barcode"
+                  value={barcode.trim()}
+                  onChange={(event) => setBarcode(event.target.value)}
+                  variant="standard"
+                  disabled={Object.keys(product).length !== 0}
+                  margin="normal"
+                  sx={{ m: 0, width: '18ch' }}
+                />
               </div>
-            </div>
+              <div className='invetory-search-buttons'>
+                <button type="submit" className='btn-admin-page btn-inventory-search'><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> Search</button>
+                <button type="button" onClick={onResetSearch} className='btn-admin-page btn-inventory-reset'>Reset</button>
+              </div>
+            </form>
             {product.barcode && 
-              <div className='xxx'>
               <form onSubmit={handleSubmit} className='set-qty-form' >
-                <div >
+                <div className='set-qty'>
                   <TextField 
                     required
                     label="quantity"
@@ -141,14 +138,13 @@ const AdminInventory = () => {
                     onChange={handleChange}
                     variant="standard"
                     margin="normal"
-                    sx={{ m: 0, width: '18ch' }}
+                    sx={{ m: 0, width: '8ch' }}
                   />
                   {errorMsg &&
                   <FormHelperText style={{color: 'red'}}>{errorMsg}</FormHelperText>}
-                </div>
                 <button type="submit" className='btn-admin-page btn-add-qty'> Add To Quantity </button>
+                </div>
               </form>
-              </div>
             }
           </div>
           { inventoryData.length === 0 ?

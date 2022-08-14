@@ -58,7 +58,7 @@ const NavbarAdminPortal = (props) => {
             onClick={handleMenu}
             color="inherit"
           > 
-            <img src='../admin-icon.png' alt="admin" width="70" height="70"/>
+            <img src='../admin-icon.png' alt="admin" className='admin-logo-img'/>
             <FontAwesomeIcon icon="fa-solid fa-caret-down" />
           </IconButton>
           <Menu

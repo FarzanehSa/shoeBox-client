@@ -157,21 +157,19 @@ const ShoppingCart = (props) => {
                           <tr key={item.barcode}>
                             <td className="image-to-data">
                               <div>
-                                <img
+                                <img className="cart-item-image"
                                   src={item.image1}
                                   alt="image1"
-                                  width="220"
-                                  height="220"
                                 />
                               </div>
-                              <div>
+                              <div className="cart-item-general-info">
                                 <div className="item-name">{item.name}</div>
                                 <div className="data-below-name">
                                   <div># {item.barcode}</div>
-                                  <div style={{ marginBottom: "10px" }}>
+                                  <div className="cart-item-size">
                                     Size: {item.size}
                                   </div>
-                                  <div style={{ marginBottom: "10px" }}>
+                                  <div className="cart-item-size">
                                     Color: {item.color}
                                   </div>
                                 </div>
@@ -183,48 +181,50 @@ const ShoppingCart = (props) => {
                                     icon="fa-solid fa-trash-can"
                                     style={{ paddingRight: "5px" }}
                                   />
-                                  Remove Item
+                                  Remove<span className="cart-remove-text">Item</span>
                                 </button>
                               </div>
                             </td>
                             <td className="quantity-and-price">
-                              <button className="btn-plus-minus"
-                                onClick={() =>{
-                                  if (item.quantity > 1) {
-                                    const newCart = cart.map((row) => {
-                                      if (row.barcode === item.barcode) {
-                                        return {
-                                          ...row,
-                                          quantity: item.quantity - 1,
-                                        };
-                                      } else {
-                                        return { ...row };
-                                      }
-                                    });
-                                    setCart(newCart);
-                                 }}}
-                              >
-                                <FontAwesomeIcon icon="fa-solid fa-square-minus" />
-                              </button>
-                              <span className="cart-item-qty"> {item.quantity} </span>
-                              <button className="btn-plus-minus"
-                                onClick={() =>{
-                                  if (item.quantity < item.availability) {
-                                    const newCart = cart.map((row) => {
-                                      if (row.barcode === item.barcode) {
-                                        return {
-                                          ...row,
-                                          quantity: item.quantity + 1,
-                                        };
-                                      } else {
-                                        return { ...row };
-                                      }
-                                    });
-                                    setCart(newCart);
-                                 }}}
-                              >
-                                <FontAwesomeIcon icon="fa-solid fa-square-plus" />
-                              </button>
+                              <div className="plus-qty-minus">
+                                <button className="btn-plus-minus"
+                                  onClick={() =>{
+                                    if (item.quantity > 1) {
+                                      const newCart = cart.map((row) => {
+                                        if (row.barcode === item.barcode) {
+                                          return {
+                                            ...row,
+                                            quantity: item.quantity - 1,
+                                          };
+                                        } else {
+                                          return { ...row };
+                                        }
+                                      });
+                                      setCart(newCart);
+                                   }}}
+                                >
+                                  <FontAwesomeIcon icon="fa-solid fa-square-minus" />
+                                </button>
+                                <span className="cart-item-qty"> {item.quantity} </span>
+                                <button className="btn-plus-minus"
+                                  onClick={() =>{
+                                    if (item.quantity < item.availability) {
+                                      const newCart = cart.map((row) => {
+                                        if (row.barcode === item.barcode) {
+                                          return {
+                                            ...row,
+                                            quantity: item.quantity + 1,
+                                          };
+                                        } else {
+                                          return { ...row };
+                                        }
+                                      });
+                                      setCart(newCart);
+                                   }}}
+                                >
+                                  <FontAwesomeIcon icon="fa-solid fa-square-plus" />
+                                </button>
+                              </div>
                             </td>
                             <td className="quantity-and-price">
                               CAD {(item.price / 100) * item.quantity}
@@ -236,21 +236,14 @@ const ShoppingCart = (props) => {
                   </table>
                   <div>
                     <div className="totals">
-                      <h4 style={{ marginBottom: "1em" }}>
-                        <div className="total-and-sub">
-                          <div>Estimated GST/HST:</div>
-                          <div>CAD {taxes.toFixed(2)}</div>
-                        </div>
-                      </h4>
-                      <h3
-                        style={{ marginTop: "0" }}
-                        className="total-end-price"
-                      >
-                        <div className="total-and-sub">
-                          <div>Total: </div>
-                          <div>CAD {(totalEndPrice + taxes).toFixed(2)}</div>
-                        </div>
-                      </h3>
+                      <div className="total-and-sub">
+                        <div className="cart-tax-title">Estimated GST/HST:</div>
+                        <div className="cart-tax">CAD {taxes.toFixed(2)}</div>
+                      </div>
+                      <div className="total-and-sub total-end-price">
+                        <div className="cart-total-title">Total: </div>
+                        <div className="cart-total">CAD {(totalEndPrice + taxes).toFixed(2)}</div>
+                      </div>
                     </div>
                     <div className="checkout-and-shopping">
                       <button

@@ -6,7 +6,7 @@ export const BarChartProduct = ({barData}) => {
 
   return (
     <div className="product-chart">
-      <h3>Best Selling Products</h3>
+      <span className="bar-title">Best Selling Products</span>
       <VictoryChart domainPadding={30} theme={VictoryTheme.material}>
         <VictoryLabel text="Quantity" x={0} y={150}  angle={-90} textAnchor="middle" backgroundStyle={{ fill: "BlanchedAlmond" }} backgroundPadding={8}/>
         <VictoryLabel text="Product" x={170} y={320} textAnchor="middle" backgroundStyle={{ fill: "LightGoldenrodYellow" }} backgroundPadding={8}/>
@@ -40,7 +40,7 @@ export const BarChartSale = ({barData}) => {
 
   return (
     <div className="sale-chart">
-      <h3>Total Sale - Last 5 Days</h3>
+      <span className="bar-title">Total Sale - Last 5 Days</span>
       <VictoryChart domainPadding={30} theme={VictoryTheme.material}>
         <VictoryLabel text="Total" x={0} y={150}  angle={-90} textAnchor="middle" backgroundStyle={{ fill: "BlanchedAlmond" }} backgroundPadding={8}/>
         <VictoryLabel text="Date" x={170} y={320} textAnchor="middle" backgroundStyle={{ fill: "LightGoldenrodYellow" }} backgroundPadding={8}/>
@@ -75,7 +75,7 @@ export const BarChartColor = ({barData}) => {
 
   return (
     <div className="color-chart">
-      <h3>Most Popular Color</h3>
+      <span className="bar-title">Most Popular Color</span>
       <VictoryChart domainPadding={30} theme={VictoryTheme.material}>
         <VictoryLabel text="Quantity" x={0} y={150}  angle={-90} textAnchor="middle" backgroundStyle={{ fill: "BlanchedAlmond" }} backgroundPadding={8} />
         <VictoryLabel text="Color" x={170} y={330} textAnchor="middle" backgroundStyle={{ fill: "LightGoldenrodYellow" }} backgroundPadding={8} />
@@ -109,7 +109,7 @@ export const BarChartSize = ({barData}) => {
 
   return (
     <div className="size-chart">
-      <h3>Best Selling Sizes</h3>
+      <span className="bar-title">Best Selling Sizes</span>
       <VictoryPie
         labelComponent={<VictoryLabel angle={15}/>}
         colorScale={["tomato", "gold","Lime", "cyan", "MediumOrchid" ]}

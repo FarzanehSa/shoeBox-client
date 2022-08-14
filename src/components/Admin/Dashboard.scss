@@ -4,59 +4,73 @@
   // border: $test2;
   padding: 20px 20px;
   min-height: 78vh;
-  height: 100%;
-  width: 90vw;
+  width: 100%;
   margin:auto;
-  margin-top:120px;
 }
 
 .admin-dashboard-page {
+  // border: $test;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
+  margin: auto;
 }
 
 .two-bar-row {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+
+  .pr-chart {
+    // border: $test3;
+    padding-bottom: 2em;
+  }
+  .sal-chart {
+    // border: $test3;
+    padding-bottom: 2em;
+    border-left: 2px solid darkgreen;
+  }
+  .co-chart {
+    // border: $test3;
+    padding-bottom: 2em;
+  }
+  .siz-chart {
+    border-left: 2px solid darkgreen;
+    padding-top: 1.5em;
+  }
 
   .product-chart {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-right: 3em;
-    padding-bottom: 2em;
   }
   .sale-chart {
-    border-left: 2px solid darkgreen;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 3em;
-    padding-bottom: 2em;
   }
   .color-chart {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-right: 3em;
-    padding-top: 2em;
   }
   .size-chart {
-    border-left: 2px solid darkgreen;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 3em;
-    padding-top: 2em;
   }
+}
+
+.bar-title {
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .top-two {
@@ -64,6 +78,52 @@
 }
 
 .barchart {
-  width: 30vw;
+  // border: $test1;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 60%;
   // height: 500vh;
 }
+
+@media only screen and (max-width: 960px) {
+
+  .two-bar-row {
+    flex-direction: column;
+    .pr-chart {
+      // border: $test3;
+      padding-bottom: 2em;
+      border-bottom: 2px solid darkgreen;
+    }
+    .sal-chart {
+      // border: $test3;
+      padding-bottom: 2em;
+      border: none;
+      border-bottom: 2px solid darkgreen;
+    }
+    .co-chart {
+      // border: $test3;
+      padding-bottom: 2em;
+      border-bottom: 2px solid darkgreen;
+    }
+    .siz-chart {
+      border-left: 2px solid darkgreen;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  .product-chart, .sale-chart, .color-chart, .size-chart {
+    margin-top: 2em;
+  }
+  .top-two {
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .bar-title {
+    font-size: 0.9em;
+  }
+}
+
