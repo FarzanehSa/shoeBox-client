@@ -14,6 +14,7 @@ import Sizes from "./Sizes";
 import Reviews from "./Reviews";
 
 import "./SingleProduct.scss";
+import { toast } from "react-toastify";
 
 const SingleProduct = (props) => {
   const [id, setId] = useState(Number(useParams().id));
@@ -28,6 +29,10 @@ const SingleProduct = (props) => {
   const [resError, setResError] = useState(false)
 
   const { products, setCart, cart, url } = useContext(GeneralContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   // console.log("selectedSize", selectedSize)
   useEffect(() => {
@@ -137,10 +142,12 @@ const SingleProduct = (props) => {
     // console.log("exists", existingObjectInCart);
     if (!existingItemInCart) {
       setCart([...cart, newCartItem]); // you can use prev here as well and spread it then add product
+      toast("Item Added To Cart", {type:'success'})
     } else {  
       if (existingItemInCart.quantity < selectedSize.quantity) {
         existingItemInCart.quantity += 1;
         setCart([...cart]);
+        toast("Item Added To Cart", {type:'success'})
       }
     }
   };

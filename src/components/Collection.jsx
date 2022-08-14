@@ -41,6 +41,10 @@ const Collection = () => {
     }
   }, []); // eslint-disable-line
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   // get the selection base on all possible filters
   useEffect(() => {
     setSelection((prev) =>

@@ -181,7 +181,7 @@ const ShoppingCart = (props) => {
                                     icon="fa-solid fa-trash-can"
                                     style={{ paddingRight: "5px" }}
                                   />
-                                  Remove<span className="cart-remove-text">Item</span>
+                                  Remove<span className="cart-remove-text">&nbsp;Item</span>
                                 </button>
                               </div>
                             </td>

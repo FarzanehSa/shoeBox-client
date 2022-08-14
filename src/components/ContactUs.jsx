@@ -19,8 +19,8 @@ function ContactUs(props) {
           <div className='name'>Farzaneh Akhounsadegh</div>
           <div className='job'>Full Stack Web Developer</div>
           <div style={{ paddingTop: '5px' }}>
-            <a href='https://www.linkedin.com/in/farzanehsadegh/'><FontAwesomeIcon icon="fa-brands fa-linkedin" className='contact-icon' /></a>
-            <a href='https://github.com/FarzanehSa'> <FontAwesomeIcon icon="fa-brands fa-github" className='contact-icon' /></a>
+            <a href='https://www.linkedin.com/in/farzanehsadegh/' target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon="fa-brands fa-linkedin" className='contact-icon' /></a>
+            <a href='https://github.com/FarzanehSa' target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon="fa-brands fa-github" className='contact-icon' /></a>
           </div>
         </div>
         <div className='team'>
@@ -32,8 +32,8 @@ function ContactUs(props) {
           <div className='last-name' ></div>
           <div className='job'>Front End Web Developer</div>
           <div style={{ paddingTop: '5px' }}>
-            <a href='https://www.linkedin.com/in/khaledalkhatib/'> <FontAwesomeIcon icon="fa-brands fa-linkedin" className='contact-icon' /></a>
-            <a href='https://github.com/Khaled91Alkhatib'> <FontAwesomeIcon icon="fa-brands fa-github" className='contact-icon' /></a>
+            <a href='https://www.linkedin.com/in/khaledalkhatib/' target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon="fa-brands fa-linkedin" className='contact-icon' /></a>
+            <a href='https://github.com/Khaled91Alkhatib' target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon="fa-brands fa-github" className='contact-icon' /></a>
           </div>
         </div>
       </div>

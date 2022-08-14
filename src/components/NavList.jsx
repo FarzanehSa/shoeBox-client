@@ -62,7 +62,7 @@ const NavList = (props) => {
           {cartClick && <ShoppingCart setCartClick={setCartClick} modalRef={ref} />}
         </div>
       </div>
-      <div className='below-nav'>Enjoy our <strong>&nbsp;Free&nbsp;</strong> shipping</div>
+      <div className='below-nav'>Welcome to<strong>&nbsp;The Shoebox</strong>. Enjoy our <strong>&nbsp;Free&nbsp;</strong> shipping</div>
     </div>
   );
 };

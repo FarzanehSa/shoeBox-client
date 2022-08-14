@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Homepage.scss";
 
 const Homepage = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div style={{lineHeight:'1.6'}} className="homepage-layout">
       <div className="image-container">

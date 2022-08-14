@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./FooterLinks.scss";
 
 function Shipping() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="main-layout">
       <div className="data">
