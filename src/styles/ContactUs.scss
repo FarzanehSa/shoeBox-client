@@ -1,3 +1,5 @@
+@import "src/styles/variables.scss";
+
 .contact-overlay-style {
   font-family: Raleway, sans-serif;
   position: fixed;
@@ -8,15 +10,21 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.team-for-column {
+  display: none;
+}
+
 .team {
-  font-size: 25px;
+  // border: $test;
+  display: block;
+  font-size: 2em;
   margin-bottom: 5em;
   letter-spacing: 0.03em;
   text-decoration: underline;
 }
 .info {
-  // border: 1px solid grey;
-  // box-shadow: 10px;
+  // border: $test1;
+  width: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,8 +41,6 @@
   background-color: white;
   position: relative;
   border-radius: 10px;
-  // overflow-y: scroll;
-  // overscroll-behavior: contain;
 }
 
 .contact-img {
@@ -46,22 +52,95 @@
 }
 
 .name {
-  font-size: 19px;
-  letter-spacing: 0.03em;
-  line-height: 1.6;
-}
-
-.last-name {
-  font-size: 21px;
+  font-size: 1.2em;
   letter-spacing: 0.03em;
   line-height: 1.6;
 }
 
 .job {
   color: grey;
+  font-size: 1em;
 }
 
 .contact-icon {
   color: blue;
-  font-size: 22px;
+  font-size: 1.4em;
+  margin-top: 0.5em;
+}
+
+@media only screen and (max-width: 960px) {
+
+  .contact-overlay-style {
+
+    .contact-background {
+      width: 50%;
+      min-height: 60%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .info {
+      width: 100%;
+      margin-top: 0.9em;
+      margin-bottom: 0.9em;
+    }
+
+    .team-for-column {
+      display: block;
+      font-size: 1.5em;
+      letter-spacing: 0.03em;
+      text-decoration: underline;
+      margin-bottom: 1em;
+    }
+
+    .contact-img {
+      height: 130px;
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1em;
+    }
+    
+    .team {
+      display: none;
+    }
+
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+  .contact-overlay-style {
+
+    .team-for-column {
+      font-size: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    .info {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .contact-img {
+      height: 90px;
+      width: 110px;
+      border-radius: 50%;
+      margin-bottom: 1em;
+    }
+
+    .name {
+      font-size: 0.9em;
+    }
+    .job {
+      font-size: 0.8em;
+    }
+    .contact-icon {
+      font-size: 0.9em;
+    }
+  }
 }

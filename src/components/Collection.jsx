@@ -111,7 +111,7 @@ const Collection = () => {
   };
 
   return (
-    <div>
+    <div className="collection-layout">
       <div className="filters">
         <div className="filter-to-buttons">
           <div>Filter:</div>
@@ -123,7 +123,7 @@ const Collection = () => {
           <div className="buttons">{stylesButtonsArray}</div>
           <div className="color-and-style-filters">
             {/* set Color filter */}
-            <FormControl variant="standard" sx={{ m: 1, minWidth: 10 }}>
+            <FormControl variant="standard" sx={{ m: 1, minWidth: 10, maxWidth: 100 }}>
               <Select value="" displayEmpty>
                 <MenuItem value="">
                   <div className="color">Color</div>
@@ -133,13 +133,13 @@ const Collection = () => {
             </FormControl>
 
             {/* set Price filter */}
-            <FormControl variant="standard" sx={{ m: 1, minWidth: 250 }}>
+            <FormControl variant="standard" sx={{ m: 1, minWidth: 180, maxWidth: 200 }}>
               <Select value="" displayEmpty>
                 <MenuItem value="">
                   <div className="price">Price</div>
                 </MenuItem>
                 <div className="slider-price">
-                  <Box sx={{ width: 200 }}>
+                  <Box sx={{ width: 150 }}>
                     <Slider
                       step={50}
                       marks

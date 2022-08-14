@@ -1,15 +1,18 @@
+@import "src/styles/variables.scss";
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  // font-family: $font-family;
-  color: black;
-  // margin: 2em;
+  font-family: $font-family;
+  margin: 0;
 }
 
 .layout {
+  border: $test1;
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -22,18 +25,20 @@ a {
   }
 }
 
-@media only screen and (max-width: 960px) {
-  html {
-    font-size: 12px;
-  }
+@media only screen and (max-width: 1024px) {
+  // html {
+  //   font-size: 16px;
+  // }
+}
 
-  .layout {
-    flex-direction: column;
-  }
+@media only screen and (max-width: 960px) {
+  // html {
+  //   font-size: 12px;
+  // }
 }
 
 @media only screen and (max-width: 320px) {
-  html {
-    font-size: 10px;
-  }
+  // html {
+  //   font-size: 10px;
+  // }
 }

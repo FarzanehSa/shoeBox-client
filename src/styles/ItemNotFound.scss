@@ -1,15 +1,41 @@
 @import "src/styles/variables.scss";
 
 .no-item-found {
+  border: $test3;
   font-family: Semplicita,Arial,sans-serif;
-  font-weight: 600;
   color: #362d2e;
-  width: 100%;
-  font-size: 20px;
-  min-height: 53vh;
+  width: 90%;
+  margin: auto;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 4em;
+
+  .data-title-main {
+    font-size: 1.8em;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .data-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: justify;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .no-item-found {
+
+    .data-title-main {
+      font-size: 1.2em;
+    }
+
+    .data-title {
+      font-size: 1em;
+    }
+  
+  }
 }

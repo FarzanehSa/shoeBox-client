@@ -2,12 +2,40 @@
 
 .not-exist-page {
   font-family: Semplicita,Arial,sans-serif;
-  font-weight: 600;
   color: #362d2e;
-  font-size: 20px;
   min-height: 78vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .data-title-main {
+    font-size: 1.8em;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .data-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .not-exist-page {
+    padding-top: 2em;
+    justify-content: flex-start;
+
+    .data-title-main {
+      font-size: 1.2em;
+    }
+
+    .data-title {
+      font-size: 1em;
+    }
+  
+  }
 }

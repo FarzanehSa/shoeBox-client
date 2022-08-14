@@ -1,12 +1,13 @@
 @import "src/styles/variables.scss";
 
 .filters {
-  padding: 140px 0 15px 0;
+  // border: $test1;
+  padding: 20px 0 15px 0;
   border-bottom: #d7d7d7 0.07143rem solid;
-  width: 90%;
+  width: 95%;
   margin: auto;
   font-family: Raleway, Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 1em;
   display: flex;
 }
 
@@ -14,27 +15,29 @@
   display: flex;
   flex-direction: row;
 }
+
 .style-buttons {
   font-family: Raleway, Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   color: #626061;
   border: none;
   background-color: white;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
+
 .all-filters {
+  // border: $test3;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  width: 94%;
+  width: 90%;
 }
 
 .color-and-style-filters {
+  // border: $test1;
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 70%;
   margin: auto;
 }
 
@@ -42,7 +45,7 @@
 .price {
   font-family: Raleway, Arial, Helvetica, sans-serif;
   // font-weight: 900;
-  font-size: 13px;
+  font-size: 0.9em;
   color: #7d7b7c;
 }
 
@@ -64,7 +67,9 @@
 }
 
 .all-specific-filters {
-  padding-left: 100px;
+  // border: $test2;
+  width: 95%;
+  margin: auto;
 }
 
 .single-filter {
@@ -89,4 +94,33 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+
+@media only screen and (max-width: 400px) {
+
+  .collection-layout {
+    .filters {
+      font-size: 0.8em;
+  
+      .style-buttons {
+        font-size: 0.9em;
+      }
+  
+      .color-and-style-filters {
+        flex-direction: column;
+        width: 70%;
+        justify-content: flex-start;
+        // align-items: flex-start;
+      }
+  
+      .color, .price {
+        font-size: 0.7em;
+      }
+    }
+
+    .single-filter {
+      font-size: 0.5em;
+    }
+  }
 }

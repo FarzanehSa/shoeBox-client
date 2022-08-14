@@ -1,65 +1,121 @@
-.image-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
+@import "src/styles/variables.scss";
 
-  // text-align: center;
-  // display: block;
-  // z-index: 200;
-}
+.homepage-layout {
+  
+  .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-image {
+    width: 90%;
+  }
 
-.main-image {
-  padding-top: 110px;
-  width: 90%;
-  // height: 400px;
-}
+  .text-under-image {
+    // border: $test3;
+    width: 70%;
+    margin: auto;
+    font-family: Raleway, sans-serif;
+    padding-top: 20px;
+  }
+  
+  .map-and-info {
+    // border: $test3;
+    display: flex;
+    width: 70%;
+    margin: auto;
+  }
+  .data-title {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
 
-.text-under-image {
-  width: 70%;
-  margin: auto;
-  font-family: Raleway, sans-serif;
-  padding-top: 20px;
-}
+  .paragraph-data {
+    text-align: justify;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 16px;
+    line-height: 1.6;
+  }
 
-.open-location {
-  font-weight: 700;
-  font-size: 18px;
-}
+  .location-and-hours {
+    // border: $test3;
+    width: 50%;
+    font-family: Raleway, sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    line-height: 130%;
+  }
+  
+  .l-h-info {
+    display: flex;
+    flex-direction: column;
+  }
 
-.map-and-info {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-  margin: auto;
-}
+  .location, .hours {
+    text-decoration: underline;
+    margin-right: 1em;
+  }
 
-.location-and-hours {
-  font-family: Raleway, sans-serif;
-  display: flex;
-  // justify-content: space-between;
-  // flex-direction: column;
-  // align-items: flex-start;
-  // justify-content: center;
-  line-height: 130%;
-}
-
-.location,
-.hours {
-  text-decoration: underline;
-  margin-right: 1em;
-
-  &.hours {
-    margin-left: 8em;
+  .complimentary-info {
+    font-family: Raleway, sans-serif;
+    width: 70%;
+    margin: auto;
   }
 }
 
-.complimentary-info {
-  font-family: Raleway, sans-serif;
-  font-size: 16px;
-  width: 70%;
-  margin: auto;
+
+
+@media only screen and (max-width: 960px) {
+  .text-under-image, .complimentary-info { 
+    width: 80%;
+  }
+  
+  .map-and-info {
+    flex-direction: column;
+    width: 80%;
+
+    .location-and-hours {
+      width: 100%;
+
+      .location {
+        margin-right: 2em;
+      }
+    }
+  }
 }
 
-.compliment-title {
-  font-size: 18px;
+@media only screen and (max-width: 400px) {
+
+  .homepage-layout {
+
+    .text-under-image, .complimentary-info { 
+      width: 80%;
+    }
+
+    .data-title {
+      font-size: 0.9em;
+      text-align: justify;
+    }
+  
+    .paragraph-data {
+      font-size: 0.8em;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+    }
+
+    .map-and-info {
+      flex-direction: column;
+      width: 80%;
+  
+      .location-and-hours {
+        width: 100%;
+      }
+  
+      .location, .hours, .l-h-info {
+        font-size: 0.8em;
+      }
+    }
+  }
 }
