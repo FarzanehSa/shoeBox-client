@@ -178,11 +178,27 @@
   }
 
   .thanks-page {
+    
     font-family: Semplicita, Arial, sans-serif;
     width: 100%;
-    width: 50vh;
-    height: 40vh;
-    margin: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+    width: 60vw;
+    height: 40vw;
+    margin: 4em 1em 0em 1em;
+
+    .data-title {
+      font-size: 1.2em;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .paragraph-data {
+      text-align: justify;
+      padding-top: 0.5em;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
   
   }
 
