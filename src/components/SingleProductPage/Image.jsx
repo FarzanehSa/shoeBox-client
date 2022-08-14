@@ -10,7 +10,7 @@ const Image = ({images, onLeft, onRight}) => {
       <button className='arrow-b' onClick={onLeft}>
         <FontAwesomeIcon icon="fa-solid fa-angle-left" />
       </button>
-      <img src={`${images[0]}`} alt="pro" className='image'/>
+      <img src={`${images[0]}`} alt="pro" className='image-single-product'/>
       <button className='arrow-b' onClick={onRight}>
         <FontAwesomeIcon icon="fa-solid fa-angle-right" />
       </button>

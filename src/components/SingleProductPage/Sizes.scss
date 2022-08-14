@@ -46,3 +46,19 @@
 .lowStockMsg {
   color: red;
 }
+
+@media only screen and (max-width: 400px) {
+
+  .size-component {
+
+    .size-list {
+      grid-template-columns: 40px 40px 40px 40px;
+      grid-auto-rows: 40px;
+    }
+    .size-box {
+      height: 38px;
+      width: 38px;
+      font-size: 12px;
+    }
+  }
+}

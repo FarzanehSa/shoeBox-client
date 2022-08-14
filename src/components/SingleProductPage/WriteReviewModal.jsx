@@ -24,14 +24,14 @@ const WriteReviewModal = ({product, onClose, onSubmit}) => {
       <button onClick={onClose} className="btn-close-modal"><FontAwesomeIcon icon="fa-solid fa-xmark" /></button>
       <div className='item-info'>
         <div>
-          <img src={product.image1} alt="image1" width="120" height="120" />
+          <img src={product.image1} alt="image1" className='r-item-image' />
         </div>
         <div>
-          <h3>WRITE A REVIEW</h3>
-          <span>{product.name}</span>
+          <div className="data-title">WRITE A REVIEW</div>
+          <span className='r-item-name'>{product.name}</span>
         </div>
       </div>
-      <div className='add-item-form'>
+      <div className='add-review-form'>
         <form onSubmit={handleSubmit}>
           <Typography component="legend">Your Rating</Typography>
           <Rating

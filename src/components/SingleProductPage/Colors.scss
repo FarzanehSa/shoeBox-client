@@ -83,3 +83,19 @@
     cursor: pointer;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .single-product {
+    .color-list {
+  
+      .btn {
+        align-self: center;
+        margin: 7px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+      }
+    }
+  }
+}

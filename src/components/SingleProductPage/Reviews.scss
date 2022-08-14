@@ -3,15 +3,15 @@
 .review-page-main {
   // border: $test;
   font-family: Semplicita,Arial,sans-serif;
-  margin-top: 5em;
-  max-width: 45vw;
-  width: 95%;
+  margin-top: 1em;
+  // max-width: 43%;
+  width: 48%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-right: 1em;
-  padding-left: 0.5em;
+  // padding-right: 1em;
+  // padding-left: 0.5em;
 }
 
 .rating-summary {
@@ -21,6 +21,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.data-title-main {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 .btn-write-review {
@@ -62,6 +68,10 @@
       font-size: 0.7em;
       color: SlateGray;
     }
+
+    .article-comments {
+      text-align: justify;
+    }
   }
 
   .comment-headline-rating{
@@ -80,7 +90,7 @@
     justify-content: flex-start;
     align-items: center;
     background-color: white;
-  
+    padding-left: 1em;
     margin-top: 3em;
     min-width: 30%;
     z-index: 2000;
@@ -101,6 +111,18 @@
       justify-content: flex-start;
       align-items: center;
       // margin-top: 1em;
+
+      img {
+        width: 120px;
+        height: 120px;
+        margin-right: 1em;
+      }
+
+      .data-title {
+        font-size: 1.1em;
+        font-weight: 600;
+        line-height: 1.8;
+      }
     }
 
     .personal-info {
@@ -162,4 +184,74 @@
     height: 40vh;
     margin: 3em;
   
+  }
+
+  @media only screen and (max-width: 960px) {
+
+    .review-page-main {
+      width: 100%;
+    }
+  
+  }
+  
+  @media only screen and (max-width: 400px) {
+  
+    .review-page-main {
+      .article-comments {
+        font-size: 0.8em;
+      }
+
+      .data-title-main {
+        font-size: 1.1em;
+        font-weight: 600;
+        line-height: 1.6;
+      }
+
+      .btn-write-review {
+        margin: 0.3em;
+        border: none;
+        background-color: black;
+        color: white;
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+
+
+    .write-review-modal {
+      margin-left: 0.1em;
+      margin-right: 0.1em;
+      font-size: 10px;
+      max-width: 94%;
+      height: fit-content;
+      width: fit-content;
+      position: absolute;
+      top: 50%;
+      left: 49%;
+      transform: translate(-49%, -60%);
+    }
+
+
+    .write-review-page {
+      .item-info {
+       img {
+         width: 100px;
+         height: 100px;
+       }
+      }
+      .btn-send-review {
+        border: none;
+        background-color: black;
+        color: white;
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+    .r-item-name {
+      font-size: 1.3em;
+    }
   }

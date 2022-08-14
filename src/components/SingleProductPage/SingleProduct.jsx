@@ -158,57 +158,62 @@ const SingleProduct = (props) => {
     <div className="single-product">       
       {products.length !== 0 && Object.keys(product).length !== 0 &&
         <div className="single-box">
-          <div>
-            <Image
-              className="product-image"
-              images={images}
-              onLeft={rotateLeft}
-              onRight={rotateRight}
-            />
-            <Reviews reviews={reviews} avgRating={avgRating} product={product}/>
-          </div>
-          <div className="item-details">
-            <span className="product-name">{product.name}</span>
-            <div><Rating name="average-rating" value={Number(avgRating)} readOnly /></div>
-            <div>SKU #{product.sku} </div>
-            <br />
-            <span className="product-price">
-              ${(product.price / 100).toFixed(2)}
-            </span>
-            <br />
-            <br />
-            <div className="product-color">
-              <span className="color-title">Color: {product.color}</span>
-              <Colors colorsFamily={colorsFamily} onColor={changeColorHandler} />
+          <div className="single-box-top">
+            <div className="item-d-important single-p-column">
+              <span className="product-name">{product.name}</span>
+              <span className="product-price">${(product.price / 100).toFixed(2)}</span>
+              <div><Rating name="average-rating" value={Number(avgRating)} readOnly /></div>
+              <div className="s-p-sku">SKU #{product.sku} </div>
             </div>
-            <br />
-            <br />
-            <div className="product-size-title">Size:</div>
-            <Sizes
-              availableSizes={availableSizes}
-              onSelectSize={onSelectSize}
-              select={selectedSize} /*onAdd={onAdd}*/
-            />
-            <button
-              className="add-to-cart tool-tip"
-              disabled={!selectedSize.id}
-              onClick={addToCart}
-            >
-              Add To Cart
+            <div className="single-product-image">
+              <Image
+                images={images}
+                onLeft={rotateLeft}
+                onRight={rotateRight}
+              />
+            </div>
+            <div className="item-details">
+              <div className="item-d-important single-p-row">
+                <div className="product-name">{product.name}</div>
+                <div><Rating name="average-rating" value={Number(avgRating)} readOnly /></div>
+                <div>SKU #{product.sku} </div>
+                <div className="product-price">
+                  ${(product.price / 100).toFixed(2)}
+                </div>
+              </div>
+              <div className="product-color">
+                <span className="color-title">Color: {product.color}</span>
+                <Colors colorsFamily={colorsFamily} onColor={changeColorHandler} />
+              </div>
+              <div className="product-size">
+                <span className="product-size-title">Size:</span>
+                <Sizes
+                  availableSizes={availableSizes}
+                  onSelectSize={onSelectSize}
+                  select={selectedSize} /*onAdd={onAdd}*/
+                />
+              </div>
+              <button
+                className="add-to-cart tool-tip"
+                disabled={!selectedSize.id}
+                onClick={addToCart}
+              >
+                Add To Cart
+                <br />
+                <span className={selectedSize.id ? "tool-tip-text-disabled" : "tool-tip-text"}>Please Choose Size!</span>
+              </button>
               <br />
-              <span className={selectedSize.id ? "tool-tip-text-disabled" : "tool-tip-text"}>Please Choose Size!</span>
-            </button>
-            <br />
-            {/* <span>{product.description}</span> */}
-            <div>
-              <ul className="list">
-                <span className="Desc-title">DESCRIPTION</span>
-                <br />
-                <br />
-                {description}
-              </ul>
             </div>
           </div>
+          <div className="single-product-description">
+            <ul className="list">
+              <span className="Desc-title">DESCRIPTION</span>
+              <br />
+              <br />
+              {description}
+            </ul>
+          </div>
+          <Reviews reviews={reviews} avgRating={avgRating} product={product}/>
         </div>
       }
       {products.length !== 0 && resError &&

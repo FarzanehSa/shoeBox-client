@@ -1,14 +1,17 @@
 @import "src/styles/variables.scss";
 
 .image-box {
+  // border: $test;
   display: flex;
   justify-content: center;
-  // border: $test;
-  height: 43vw;
-  width: 43vw;
-  // background-color: WhiteSmoke;
   border-radius: 8%;
-  margin-right: 2em;
+  width: 100%;
+
+  .image-single-product {
+    // border: $test;
+    align-self: center;
+    width: 80%;
+  }
 }
 
 .arrow-b {
@@ -26,10 +29,5 @@
   }
 }
 
-.image {
-  // border: $test;
-  align-self: center;
-  height: 85%;
-  width: 90%;
-}
+
 

@@ -45,7 +45,7 @@ const Reviews = ({reviews, avgRating, product}) => {
         <span className='date'>{review.date}</span>
         <br />
         <br />
-        <article>{review.comments}</article>
+        <article className='article-comments'>{review.comments}</article>
       </section>
     )
   });
@@ -53,7 +53,7 @@ const Reviews = ({reviews, avgRating, product}) => {
   return (
     <div className='review-page-main' id="xxx">
       <div className='rating-summary'>
-        <h3>{avgRating*20}% Customer Recommended </h3>
+        <p className="data-title-main">{avgRating*20}% Customer Recommended</p>
         <span>({reviews.length} reviews)</span>
         <br />
         <div><Rating name="average-rating" value={Number(avgRating)} readOnly /></div>
