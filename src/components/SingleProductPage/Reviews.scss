@@ -181,11 +181,9 @@
     
     font-family: Semplicita, Arial, sans-serif;
     width: 100%;
-    padding-left: 3em;
-    padding-right: 3em;
-    width: 60vw;
-    height: 40vw;
-    margin: 4em 1em 0em 1em;
+    width: 40vw;
+    height: 25vw;
+    margin: 3em;
 
     .data-title {
       font-size: 1.2em;
@@ -199,7 +197,6 @@
       font-size: 1.1em;
       line-height: 1.6;
     }
-  
   }
 
   @media only screen and (max-width: 960px) {
@@ -207,7 +204,13 @@
     .review-page-main {
       width: 100%;
     }
-  
+
+    .thanks-page {
+      width: 100%;
+      width: 55vw;
+      height: 35vw;
+      margin: 2em;
+    }
   }
   
   @media only screen and (max-width: 500px) {
@@ -235,7 +238,6 @@
       }
     }
 
-
     .write-review-modal {
       margin-left: 0.1em;
       margin-right: 0.1em;
@@ -247,6 +249,13 @@
       top: 50%;
       left: 49%;
       transform: translate(-49%, -60%);
+    }
+
+    .thanks-page {
+      width: 100%;
+      width: 60vw;
+      height: 40vw;
+      margin: 1em;
     }
 
 

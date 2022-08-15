@@ -100,7 +100,7 @@ const AdminInventory = () => {
 
   return (
     <div className='admin-inventory-page-main'>
-      {user.name && 
+      {user.name &&
         <div className='admin-inventory-page'>
           <p className='admin-title'>Enter product's barcode or select by clicking on it's row to Update Inventory!</p>
           <div className='search-barcode-set-qty'>
@@ -116,7 +116,7 @@ const AdminInventory = () => {
                   variant="standard"
                   disabled={Object.keys(product).length !== 0}
                   margin="normal"
-                  sx={{ m: 0, width: '18ch' }}
+                  sx={{ m: 0, maxWidth: '18ch' }}
                 />
               </div>
               <div className='invetory-search-buttons'>
@@ -127,21 +127,23 @@ const AdminInventory = () => {
             {product.barcode && 
               <form onSubmit={handleSubmit} className='set-qty-form' >
                 <div className='set-qty'>
-                  <TextField 
-                    required
-                    label="quantity"
-                    id="quantity"
-                    type="number"
-                    min="1"
-                    name="quantity"
-                    value={newQty}
-                    onChange={handleChange}
-                    variant="standard"
-                    margin="normal"
-                    sx={{ m: 0, width: '8ch' }}
-                  />
-                  {errorMsg &&
-                  <FormHelperText style={{color: 'red'}}>{errorMsg}</FormHelperText>}
+                  <div className='new-qty-input'>
+                    <TextField 
+                      required
+                      label="quantity"
+                      id="quantity"
+                      type="number"
+                      min="1"
+                      name="quantity"
+                      value={newQty}
+                      onChange={handleChange}
+                      variant="standard"
+                      margin="normal"
+                      sx={{ m: 0, maxWidth: '12ch' }}
+                    />
+                    {errorMsg &&
+                    <FormHelperText style={{color: 'red'}}>{errorMsg}</FormHelperText>}
+                  </div>
                 <button type="submit" className='btn-admin-page btn-add-qty'> Add To Quantity </button>
                 </div>
               </form>

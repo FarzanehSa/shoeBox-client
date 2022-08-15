@@ -35,7 +35,9 @@ const InventoryList = ({inventoryData, product, onClickHandler}) => {
       
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={row.barcode} ref={el => barcodesRef.current[index] = el} onClick={() => onClickHandler(row.barcode)}>
-        <TableCell align='center' className={classSelect} >{index + 1}</TableCell>
+        <TableCell align='center' className={classSelect} >
+          <span className='row-cell'>{index + 1}</span>
+        </TableCell>
         <TableCell align='center' className={classSelect} >
           <span className='barcode-cell'>{row.barcode}</span>
         </TableCell>
@@ -44,10 +46,10 @@ const InventoryList = ({inventoryData, product, onClickHandler}) => {
         </TableCell>
         <TableCell align='center' className={classSelect} >
           <div className='item-cell'>
-            <img src={row.image1} alt="image1" width="80" height="80" />
+            <img src={row.image1} alt="image1" className='inventory-image'/>
             <div className='details'>
               <span className='sku'>SKU: {row.sku}</span>
-              <span>{row.name}</span>
+              <span className='item-name'>{row.name}</span>
             </div>
           </div>         
         </TableCell>
@@ -61,17 +63,17 @@ const InventoryList = ({inventoryData, product, onClickHandler}) => {
   return (
     <div className='inventory-section'>
       <hr />
-      <h2>Inventory List</h2>
+      <p className='admin-inventory-title'>Inventory List</p>
       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                <TableCell align="center" style={{ minWidth: 70 }}>Row</TableCell>
-                <TableCell align="center" style={{ minWidth: 100 }}>Barcode</TableCell>
-                <TableCell align="center" style={{ minWidth: 80 }}>Size</TableCell>
-                <TableCell align="center" style={{ minWidth: 150 }}>Item Details</TableCell>
-                <TableCell align="center" style={{ minWidth: 80 }}>Quantity</TableCell>
+                <TableCell align="center" style={{ minWidth: 20 }}>Row</TableCell>
+                <TableCell align="center" style={{ minWidth: 40 }}>Barcode</TableCell>
+                <TableCell align="center" style={{ minWidth: 30 }}>Size</TableCell>
+                <TableCell align="center" style={{ minWidth: 80 }}>Item Details</TableCell>
+                <TableCell align="center" style={{ minWidth: 40 }}>Quantity</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

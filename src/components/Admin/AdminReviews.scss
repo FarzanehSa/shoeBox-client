@@ -4,9 +4,14 @@
   // border: $test2;
   padding: 20px 20px;
   min-height: 78vh;
-  height: 100%;
-  width: 90vw;
+  width: 95%;
   margin:auto;
+
+  .admin-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 3em;
+  }
 }
 
 .admin-reviews-page {
@@ -39,7 +44,7 @@
   }
 
   th {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   .post-cell {
@@ -63,7 +68,7 @@
     font-size: 1.2em;
   }
   .date {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 
   .btn-review-save {
@@ -79,65 +84,48 @@
 }
 
 @media only screen and (max-width: 960px) {
+  .admin-reviews-page-main {
+  
+    .admin-title {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
 
-
+    th {
+      font-size: 1em;
+    }
+    .date {
+      font-size: 0.8em;
+    }
+    .rate {
+      font-size: 0.8em;
+    }
+    .headline {
+      font-size: 1.1em;
+    }
+    .comments {
+      font-size: 0.8em;
+    }
+  }
 }
 
 @media only screen and (max-width: 500px) {
+  .admin-reviews-page-main {
+  
+    .admin-title {
+      font-size: 1em;
+      margin-bottom: 2em;
+    }
 
+    th {
+      font-size: 0.8em;
+    }
 
+    .btn-review-save {
+      padding: 10px 10px;
+      width: 130px;
+      font-size: 12px;
+    }
+  }
 }
 
-// .search-barcode-set-qty {
-//   // border: $test;
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1em;
-// }
-
-// .search-barcode {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .search-barcode-form {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 1em;
-// }
-
-// .set-qty-form {
-//   display: flex;
-//   padding: 1em;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-// }
-
-// .btn-add-qty {
-//   margin-top: 1em;
-//   padding: 7px 10px;
-//   width: 160px;
-// }
-
-// // ----------------------------------------
-
-// .inventory-section {
-//   width: 100%;
-
-//   th {
-//     font-size: 18px;
-//   }
-
-//   .select {
-//     background-color: limegreen;
-//   }
-// }
-
-// .even-row-inventory {
-//   background-color: Gainsboro;
-// }

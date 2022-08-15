@@ -24,22 +24,47 @@ const OrderList = ({ordersData}) => {
           <TableCell>
             <IconButton
               aria-label="expand row"
-              size="small"
+              // size="small"
               onClick={() => setOpen(!open)}
             >
-              {open ? <FontAwesomeIcon icon="fa-solid fa-angle-up" /> : <FontAwesomeIcon icon="fa-solid fa-angle-down" />}
+              {open ? 
+                <div className='o-icon'>
+                  <FontAwesomeIcon icon="fa-solid fa-angle-up" />
+                </div>
+                  :
+                <div className='o-icon'>
+                  <FontAwesomeIcon icon="fa-solid fa-angle-down" />
+                </div>
+              }
             </IconButton>
           </TableCell>
-          <TableCell align="center" sx={{fontSize: "1.1em"}}>{order.id}</TableCell>
-          <TableCell align="center" sx={{fontSize: "1.1em"}}>{order.date}</TableCell>
-          <TableCell align="left" sx={{fontSize: "0.9em"}}>
+          <TableCell align="center" >
+            <div className='o-num'>
+              {order.id}
+            </div>
+          </TableCell>
+          <TableCell align="center">
+            <div className='o-date'>
+              {order.date}
+            </div>
+          </TableCell>
+          <TableCell align="left">
             <div className='customer-info'>
               <span>{order.customer}</span>
               <span>email: {order.email}</span>
             </div>
-              </TableCell>
-          <TableCell align="left" sx={{fontSize: "1.1em"}}>{order.address} - {order.city}</TableCell>
-          <TableCell align="right" sx={{fontSize: "1.1em"}}>${order.total / 100}</TableCell>
+          </TableCell>
+          <TableCell align="left">
+            <div className='o-address'>
+              <span>{order.address}</span>
+              <span>{order.city}</span>
+            </div>
+          </TableCell>
+          <TableCell align="right">
+            <div className='o-total'>
+              ${order.total / 100}
+            </div>
+          </TableCell>
         </TableRow>
         <TableRow>
           <TableCell style={{ paddingBottom: 1, paddingTop: 1 }} colSpan={6}>
@@ -88,12 +113,22 @@ const OrderList = ({ordersData}) => {
           <Table stickyHeader>
             <TableHead>
               <TableRow>
-                <TableCell />
-                <TableCell sx={{fontSize: "1.3em"}} align='center'minwidth='100'># Order</TableCell>
-                <TableCell sx={{fontSize: "1.3em"}} align='center' minwidth='100' >Date</TableCell>
-                <TableCell sx={{fontSize: "1.3em"}} align='left' minwidth='150' >Customer Info</TableCell>
-                <TableCell sx={{fontSize: "1.3em"}} align='left' minwidth='150' >Address</TableCell>
-                <TableCell sx={{fontSize: "1.3em"}} align='right' minwidth='100' >Total</TableCell>
+                <TableCell minwidth='10'/>
+                <TableCell align='center' minwidth='30'>
+                  <div className="o-title"># Order</div>
+                </TableCell>
+                <TableCell align='center' minwidth='60' >
+                  <div className="o-title">Date</div>
+                </TableCell>
+                <TableCell align='left' minwidth='60' >
+                  <div className="o-title">Customer Info</div>
+                </TableCell>
+                <TableCell align='left' minwidth='70' >
+                  <div className="o-title">Address</div>
+                </TableCell>
+                <TableCell align='right' minwidth='40' >
+                  <div className="o-title">Total</div>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

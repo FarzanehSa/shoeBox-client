@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextField from '@mui/material/TextField';
+import FormHelperText from '@mui/material/FormHelperText';
 
 import GeneralContext from "../../contexts/GeneralContext";
 import { findProductBySku } from '../../helper/findProductBySku';
@@ -51,28 +52,30 @@ const AdminProduct = (props) => {
     <div className='admin-product-page-main'>
       {user.name && 
         <div className='admin-product-page'>
-          <h3>Input SKU in order to Edit or Add new product!</h3>
+          <p className='admin-title'>Input SKU in order to Edit or Add new product!</p>
           <div className='search-sku'>
             <form onSubmit={onSearch} className='search-sku-form'>
-              <div className='sku-feild'>
-                <TextField
-                  required
-                  label="SKU"
-                  id="sku"
-                  name="sku"
-                  value={sku.trim()}
-                  onChange={(event) => setSku(event.target.value)}
-                  variant="standard"
-                  disabled={Object.keys(product).length !== 0}
-                  margin="normal"
-                  sx={{ m: 0, width: '18ch' }}
-                />
+              <div className='sku-with-helper'>
+                <div className='sku-feild'>
+                  <TextField
+                    required
+                    label="SKU"
+                    id="sku"
+                    name="sku"
+                    value={sku.trim()}
+                    onChange={(event) => setSku(event.target.value)}
+                    variant="standard"
+                    disabled={Object.keys(product).length !== 0}
+                    margin="normal"
+                    sx={{ m: 0, width: '16ch' }}
+                  />
+                </div>
+                <FormHelperText>pattern: 4digits/c/2digits</FormHelperText>
+                <FormHelperText>exp: 1001c02</FormHelperText>
               </div>
-              <button type="submit" className='btn-admin-page'><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> Search</button>
+              <button type="submit" className='btn-admin-page btn-sku-search'><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> Search</button>
+              <button type="button" onClick={onResetSearch} className='btn-admin-page btn-sku-reset'>Reset</button>
             </form>
-            <div>
-              <button onClick={onResetSearch} className='btn-admin-page'>Reset</button>
-            </div>
           </div>
           { product.sku && !product.name &&  
             <LoadAddForm onSubmit={props.onAdd} onReset={onResetSearch} sku={sku}/>

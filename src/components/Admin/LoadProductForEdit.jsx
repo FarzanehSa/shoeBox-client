@@ -129,7 +129,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
       <hr />
       <form onSubmit={handleSubmit} className='edit-item-form'>
         <div className='edit-item-form-header'>
-          <h2>Edit Product</h2>
+          <p className='admin-edit-add-title'>Edit Product</p>
           <div className='button-error'>
             <button type="submit" className='btn-admin-page btn-edit-product'> Save</button>
             {errorMsg &&
@@ -186,7 +186,8 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
                 onChange={handleChange}
                 variant="standard"
                 margin='normal'
-                sx={{width: '90%' }}
+                inputProps={{min: 0, style: { textAlign: 'center' }}}
+                sx={{width: '90%', textAlign: 'right'}}
               />
             </div>
 
@@ -242,7 +243,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
               <div className='add-item-image-group'>
                 <div className='image-select'>
                   <label htmlFor="file-upload-image1" className="custom-file-upload">
-                    Select & Upload Image 1
+                    Edit Image 1
                   </label>
                   <input 
                     id="file-upload-image1" 
@@ -253,7 +254,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
                   />
                   {formData.image1 &&
                     <div className='img-preview-part'>
-                      <span> preview:</span>
+                      <span className='text-preview'> preview:</span>
                       <div className='img-preview'>
                         <img
                           src={formData.image1}
@@ -274,7 +275,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
 
                 <div className='image-select'>
                   <label htmlFor="file-upload-image2" className="custom-file-upload">
-                    Select & Upload Image 2
+                    Edit Image 2
                   </label>
                   <input 
                     id="file-upload-image2" 
@@ -285,7 +286,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
                   />
                   {formData.image2 &&
                     <div className='img-preview-part'>
-                      <span> preview:</span>
+                      <span className='text-preview'> preview:</span>
                       <div className='img-preview'>
                         <img
                           src={formData.image2}
@@ -303,7 +304,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
 
                 <div className='image-select'>
                   <label htmlFor="file-upload-image3" className="custom-file-upload">
-                    Select & Upload Image 3
+                    Edit Image 3
                   </label>
                   <input 
                     id="file-upload-image3" 
@@ -314,7 +315,7 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
                   />
                   {formData.image3 &&
                     <div className='img-preview-part'>
-                      <span> preview:</span>
+                      <span className='text-preview'> preview:</span>
                       <div className='img-preview'>
                         <img
                           src={formData.image3}
@@ -352,13 +353,13 @@ const LoadProductForEdit = ({product, onSubmit, onReset, availableSizes}) => {
         <div className='size-table'>
           { newSizeArray.length !== 0 &&
             <div className='new-sizes'>
-              <h3><li>Define unique barcode for these sizes.</li></h3> 
+              <div className='size-barcode-title'><li>Define unique barcode for these sizes.</li></div>
               {newSizeArray}
             </div>
           }
           { oldSizeArray.length !== 0 &&
             <div className='old-sizes'>
-              <h3><li>Already defined sizes.</li></h3> 
+            <div className='size-barcode-title'><li>Already defined sizes.</li></div>
               {oldSizeArray}
             </div>
           }

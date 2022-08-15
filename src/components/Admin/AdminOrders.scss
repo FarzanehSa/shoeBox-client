@@ -4,15 +4,34 @@
   // border: $test2;
   padding: 20px 20px;
   min-height: 78vh;
-  height: 100%;
-  width: 90vw;
-  margin:auto;
+  width: 90%;
+  margin:auto; 
+
+  .admin-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 3em;
+  }
 }
 
 .admin-orders-page {
-  display: flex;
+  // border: $test3;
   width: 100%;
+  display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.order-date-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+
+.o-data-range-select {
+  display: flex;
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -25,7 +44,7 @@
 
 .date-picker-to {
   margin-left: 1em;
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 .orders-section {
@@ -39,12 +58,76 @@
   }
 }
 
+.o-title {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.o-icon {
+  font-size: 0.7em;
+}
+.o-num {
+  font-size: 1em;
+}
+.o-date {
+  font-size: 1em;
+}
+.customer-info {
+  font-size: 1em;
+}
+.o-total {
+  font-size: 1.1em;
+}
+.o-address {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+}
+
 @media only screen and (max-width: 960px) {
 
+  .admin-orders-page-main {
+  
+    .admin-title {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
 
+    .order-date-form {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-display {
+      margin-top: 1em;
+      padding: 7px 10px;
+      width: 180px;
+    }
+  }
+
+  .o-title {
+    font-size: 1em;
+  }
 }
 
 @media only screen and (max-width: 400px) {
 
+  .admin-orders-page-main {
+    padding: 20px 0px;
 
+    .admin-title {
+      font-size: 1em;
+    }
+  }
+
+  .date-picker-to {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+  }
+
+  .o-title {
+    font-size: 0.8em;
+  }
 }

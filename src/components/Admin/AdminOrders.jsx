@@ -67,30 +67,32 @@ const AdminOrders = (props) => {
     <div className='admin-orders-page-main'>
       {user.name && 
         <div className='admin-orders-page'>
-        <h2>Orders Detail!</h2>
-          <div className=''>
-            <form onSubmit={onDisplay} className='search-sku-form'>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-               <DesktopDatePicker
-                 label="From"
-                 value={fromDate}
-                 minDate={new Date('2017-01-01')}
-                 onChange={onChangeFromDate}
-                 renderInput={(params) => <TextField {...params} />}
-               />
-               <div className='date-picker-to'>
-                <DesktopDatePicker
-                  label="To"
-                  value={toDate}
-                  minDate={new Date('2017-01-01')}
-                  onChange={onChangeToDate}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-               </div>
-              </LocalizationProvider>
-              <button type="submit" className='btn-admin-page btn-display'>Display</button>
-            </form>
+        <p className="admin-title">Orders Detail!</p>
+        <form onSubmit={onDisplay} className='order-date-form'>
+          <div className='o-data-range-select'>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <div className='date-picker-to'>
+             <DesktopDatePicker
+               label="From"
+               value={fromDate}
+               minDate={new Date('2017-01-01')}
+               onChange={onChangeFromDate}
+               renderInput={(params) => <TextField {...params} />}
+             />
+            </div>
+            <div className='date-picker-to'>
+              <DesktopDatePicker
+                label="To"
+                value={toDate}
+                minDate={new Date('2017-01-01')}
+                onChange={onChangeToDate}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </div>
+            </LocalizationProvider>
           </div>
+          <button type="submit" className='btn-admin-page btn-display'>Display</button>
+        </form>
           {ordersData.length !== 0 && 
             <OrderList ordersData={ordersData} /> 
           }

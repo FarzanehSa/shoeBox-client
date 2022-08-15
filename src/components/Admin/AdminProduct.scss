@@ -4,34 +4,54 @@
   // border: $test;
   padding: 20px 20px;
   min-height: 78vh;
-  height: 100%;
-  width: 90vw;
+  width: 95%;
   margin:auto;
+
+  .admin-title {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  .admin-edit-add-title {
+    font-size: 1.6em;
+    font-weight: 600;
+  }
+  .size-barcode-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1em;
+  }
 }
 
 .admin-product-page {
   // border: $test;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
 }
 
 .search-sku {
+  // border: $test1;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 1em;
 }
 
 .search-sku-form {
+  // border: $test2;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1em;
 
   .sku-feild {
     margin-right: 2em;
+  }
+  .btn-sku-search {
+    margin-right: 1em;
   }
 }
 
@@ -42,26 +62,26 @@
   width: 100%;
 }
 
-.edit-item-form {
+.edit-item-form, .add-item-form {
   // border: $test1;
-  margin: 2em;
+  width: 100%;
 
-  .edit-item-form-header {
+  .edit-item-form-header, .add-item-form-header {
     // border: $test3;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     .button-error {
-      // border: $test;
-      width: 50vw;
+      // border: $test2;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
 
-    .btn-edit-product {
+    .btn-edit-product, .btn-add-product {
       padding: 10px 10px;
       width: 10em;
       font-size: 1.1em;
@@ -146,10 +166,8 @@
     }
 
     .checkbox-display {
+      // border: $test;
       width: 100%;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
     }
   }
 
@@ -160,7 +178,7 @@
     padding-bottom: 1em;
 
     .img-preview-part {
-      margin-left: 2em;
+      margin-left: 1em;
       margin-right: 1em;
       display: flex;
       justify-content: center;
@@ -190,29 +208,7 @@
 
 .add-item-form {
   // border: $test1;
-  margin: 2em;
 
-  .add-item-form-header {
-    // border: $test3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .button-error {
-      // border: $test;
-      width: 50vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn-add-product {
-      padding: 10px 10px;
-      width: 10em;
-      font-size: 1.1em;
-    }
-  }
 
   .add-top-body {
     // border: $test;
@@ -242,10 +238,6 @@
         width: 40%;
       }
     }
-
-    // .description-feild {
-    //   border: $test2;
-    // }
 
     .category-style-color {
       // border: $test2;
@@ -292,9 +284,6 @@
 
     .checkbox-display {
       width: 100%;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
     }
   }
 
@@ -305,7 +294,7 @@
     padding-bottom: 1em;
 
     .img-preview-part {
-      margin-left: 2em;
+      margin-left: 1em;
       margin-right: 1em;
       display: flex;
       justify-content: center;
@@ -351,7 +340,7 @@
 }
 
 .edit-size-row {
-  margin-bottom: 2em;
+  // margin-bottom: 2em;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -377,6 +366,10 @@
     box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
   }
+  &:focus {
+    box-shadow:none;
+    transform:none;
+  }
 }
 
 input[type="file"] {
@@ -397,10 +390,139 @@ input[type="file"] {
 
 @media only screen and (max-width: 960px) {
 
+  .admin-product-page-main {
+    width: 100%;
+    
+    .admin-title {
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+    .admin-edit-add-title {
+      font-size: 1.3em;
+      font-weight: 600;
+    } 
 
+    .size-barcode-title {
+      font-size: 1em;
+      font-weight: 400;
+    }
+
+    .search-sku {
+      padding: 0;
+    }
+
+    .edit-top-body, .add-top-body{
+      flex-direction: column;
+      
+      .edit-top-left, .add-top-left {
+        width: 100%;
+      }
+      .edit-top-right, .add-top-right {
+        width: 100%;
+      }
+
+    }
+    
+
+  }
+  
+  
+  .search-sku-form {
+    .sku-feild {
+      margin-right: 1em;
+      font-size: 0.9em;
+    }
+    .btn-sku-search {
+      padding: 7px 7px;
+      margin-right: 0.5em;
+      font-size: 0.9em;
+      width: 110px;
+    }
+    .btn-sku-reset {
+      padding: 7px 7px;
+      margin-right: 0.2em;
+      font-size: 0.9em;
+      width: 110px;
+    }
+  }
+
+  .edit-item-form, .add-item-form {
+    padding: 0;
+    .edit-item-form-header, .add-item-form-header {
+      .btn-edit-product, .btn-add-product {
+        padding: 7px 7px;
+        width: 9em;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .size-table {
+    flex-direction: column;
+    align-items: center;
+
+    .new-sizes, .old-sizes {
+      width: 80%;
+    }
+  }
 }
 
 @media only screen and (max-width: 500px) {
 
+  .admin-product-page-main {
+    padding: 20px 0px;
+
+    .admin-title {
+      font-size: 0.7em;
+    }
+    .admin-edit-add-title {
+      font-size: 1em;
+      font-weight: 600;
+    }
+
+    .size-barcode-title {
+      font-size: 0.7em;
+      font-weight: 400;
+    }
+
+    .text-preview {
+      font-size: x-small;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+  }
+
+  .search-sku-form {
+  
+    .sku-feild {
+      margin-right: 0.3em;
+      font-size: 0.7em;
+    }
+    .btn-sku-search {
+      margin-right: 0.5em;
+      font-size: 0.7em;
+      width: 90px;
+    }
+    .btn-sku-reset {
+      margin-right: 0.2em;
+      font-size: 0.7em;
+      width: 90px;
+    }
+  }
+
+  .edit-item-form, .add-item-form {
+    padding: 0;
+    .edit-item-form-header, .add-item-form-header {
+      .btn-edit-product, .btn-add-product {
+        padding: 7px 7px;
+        width: 8em;
+        font-size: 0.8em;
+      }
+    }
+  }
 
 }

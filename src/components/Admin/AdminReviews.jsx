@@ -125,14 +125,14 @@ const AdminReviews = () => {
       {user.name && 
         <div className='admin-reviews-page'>
           <div className='head-group'>
-            <h2>New customer reviews</h2>
-            <button 
-              className='btn-admin-page btn-review-save'
-              disabled={!newReviews.length}
-              onClick={onSave}
-            >
-              Save
-            </button>     
+          <p className="admin-title">New customer reviews</p>
+          <button 
+            className='btn-admin-page btn-review-save'
+            disabled={!newReviews.length}
+            onClick={onSave}
+          >
+            Save
+          </button>     
           </div>
           <br />
           <br />
@@ -142,8 +142,8 @@ const AdminReviews = () => {
                 <TableHead>
                   <TableRow>
                     <TableCell align="center" style={{minWidth: 70}}>Received Date</TableCell>
-                    <TableCell align="center" style={{minWidth: 200}}>Item</TableCell>
-                    <TableCell align="left" style={{minWidth: 200}}>New Post</TableCell>
+                    <TableCell align="center" style={{minWidth: 100}}>Item</TableCell>
+                    <TableCell align="left" style={{minWidth: 150}}>New Post</TableCell>
                     <TableCell align="center" style={{minWidth: 70}}>Approved</TableCell>
                     <TableCell align="center" style={{minWidth: 70}}>Reject</TableCell>
                   </TableRow>

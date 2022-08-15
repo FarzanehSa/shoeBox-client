@@ -97,7 +97,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
       <hr />
       <form onSubmit={handleSubmit} className='add-item-form'>
         <div className='add-item-form-header'>
-          <h2>Add New Main Product</h2>
+          <p className='admin-edit-add-title'>Add New Main Product</p>
           <div className='button-error'>
             <button type="submit" className='btn-admin-page btn-add-product'> Add Item</button>
             {errorMsg &&
@@ -207,6 +207,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                 onChange={handleChange}
                 variant="standard"
                 margin='normal'
+                inputProps={{min: 0, style: { textAlign: 'center' }}}
                 sx={{width: '90%' }}
               />
             </div>
@@ -216,7 +217,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
               <div className='add-item-image-group'>
                 <div className='image-select'>
                   <label htmlFor="file-upload-image1" className="custom-file-upload">
-                    Select & Upload Image 1
+                    Add Image 1
                   </label>
                   <input 
                     id="file-upload-image1" 
@@ -227,7 +228,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                   />
                   {formData.image1 &&
                     <div className='img-preview-part'>
-                      <span> preview:</span>
+                      <span className='text-preview'> preview:</span>
                       <div className='img-preview'>
                         <img
                           src={formData.image1}
@@ -248,7 +249,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                 
                 <div className='image-select'>
                   <label htmlFor="file-upload-image2" className="custom-file-upload">
-                    Select & Upload Image 2
+                    Add Image 2
                   </label>
                   <input 
                     id="file-upload-image2" 
@@ -259,7 +260,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                   />
                   {formData.image2 &&
                     <div className='img-preview-part'>
-                      <span> preview:</span>
+                      <span className='text-preview'> preview:</span>
                       <div className='img-preview'>
                         <img
                           src={formData.image2}
@@ -277,7 +278,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                 
                 <div className='image-select'>
                   <label htmlFor="file-upload-image3" className="custom-file-upload">
-                    Select & Upload Image 3
+                    Add Image 3
                   </label>
                   <input 
                     id="file-upload-image3" 
@@ -288,7 +289,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
                   />
                   {formData.image3 &&
                     <div className='img-preview-part'>
-                      <span> preview:</span>
+                      <span className='text-preview'> preview:</span>
                       <div className='img-preview'>
                         <img
                           src={formData.image3}
@@ -326,7 +327,7 @@ const LoadAddForm = ({onSubmit, onReset, sku}) => {
 
         <div className='size-table'>
           <div className='new-sizes'>
-            <h3><li>Define unique barcode for these sizes.</li></h3> 
+            <div className='size-barcode-title'><li>Define unique barcode for these sizes.</li></div>
             {newSizeArray}
           </div>
         </div>
