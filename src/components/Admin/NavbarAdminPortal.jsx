@@ -46,7 +46,7 @@ const NavbarAdminPortal = (props) => {
           <FontAwesomeIcon className='bar' icon="fa-solid fa-bars" onClick={() => showSidebar()} />
         </NavLink>
         <div className='logo-to-name'>
-          <img className='logo-image' onClick={onClickLogo} src='../logo-dark.png' alt="logo"/>
+          <img className='admin-nav-logo-image' onClick={onClickLogo} src='https://res.cloudinary.com/demoshoebox/image/upload/c_thumb,w_200,g_face/v1660365841/products/important/logo-dark_ssw9ta.png' alt="logo"/>
           <div className='logo' onClick={onClickLogo}>The Shoebox</div>
         </div>
         {user.name && <div className='admin-logo'>

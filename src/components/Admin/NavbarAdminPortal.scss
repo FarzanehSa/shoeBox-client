@@ -28,7 +28,7 @@
     display: flex;
     cursor: pointer;
 
-    .logo-image {
+    .admin-nav-logo-image {
       margin: 0.3em 0.5em 0.3em 1.5em;
       width: 85px;
     }
@@ -147,7 +147,7 @@
 @media only screen and (max-width: 500px) {
   .nav-bar-admin {
     .logo-to-name {
-      .logo-image {
+      .admin-nav-logo-image {
         margin: 0.3em 0.5em 0.3em 1.5em;
         width: 85px;
       }
@@ -161,7 +161,7 @@
 
   .nav-bar-admin {
     .logo-to-name {
-      .logo-image {
+      .admin-nav-logo-image {
         margin: 0.2em 0.5em 0.2em 1em;
         width: 75px;
       }
