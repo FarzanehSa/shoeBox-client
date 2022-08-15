@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextField from '@mui/material/TextField';
-import FormHelperText from '@mui/material/FormHelperText';
+// import FormHelperText from '@mui/material/FormHelperText';
 
 import GeneralContext from "../../contexts/GeneralContext";
 import { findProductBySku } from '../../helper/findProductBySku';
@@ -70,8 +70,8 @@ const AdminProduct = (props) => {
                     sx={{ m: 0, width: '16ch' }}
                   />
                 </div>
-                <FormHelperText>pattern: 4digits/c/2digits</FormHelperText>
-                <FormHelperText>exp: 1001c02</FormHelperText>
+                {/* <FormHelperText>pattern: 4digits/c/2digits</FormHelperText> */}
+                {/* <FormHelperText>exp: 1001c02</FormHelperText> */}
               </div>
               <button type="submit" className='btn-admin-page btn-sku-search'><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> Search</button>
               <button type="button" onClick={onResetSearch} className='btn-admin-page btn-sku-reset'>Reset</button>
