@@ -1,6 +1,7 @@
 @import "src/styles/variables.scss";
 
 .color-list {
+  border: $test1;
   display: flex;
   justify-content: center;
 }
@@ -84,18 +85,18 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .single-product {
-    .color-list {
-  
-      .btn {
-        align-self: center;
-        margin: 7px;
-        height: 20px;
-        width: 20px;
-        border-radius: 50%;
-        border: 3px solid #fff;
-      }
-    }
-  }
-}
+// @media only screen and (max-width: 500px) {
+//   .single-product {
+//     .color-list {
+     
+//       .btn {
+//         align-self: center;
+//         margin: 7px;
+//         height: 20px;
+//         width: 20px;
+//         border-radius: 50%;
+//         border: 3px solid #fff;
+//       }
+//     }
+//   }
+// }
