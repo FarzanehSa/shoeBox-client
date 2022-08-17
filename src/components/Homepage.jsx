@@ -34,7 +34,7 @@ const Homepage = () => {
           setPhoto3(100);
           break;
       }
-    },10000);
+    },5000);
     
     return (() => clearTimeout(rotatePhoto))
   },[photo1, photo2, photo3])
