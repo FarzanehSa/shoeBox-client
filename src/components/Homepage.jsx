@@ -3,14 +3,14 @@ import "../styles/Homepage.scss";
 
 const Homepage = () => {
 
-  const [photo1, setPhoto1] = useState(1)
-  const [photo2, setPhoto2] = useState(10)
-  const [photo3, setPhoto3] = useState(100)
+  const [photo1, setPhoto1] = useState(1);
+  const [photo2, setPhoto2] = useState(10);
+  const [photo3, setPhoto3] = useState(100);
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
-  console.log(photo1, '  ',photo2, '  ',photo3)
+  }, []);
+  
   useEffect(() => {
     const rotatePhoto = setTimeout(() => {
       const sum = photo1 + photo2 + photo3;
