@@ -1,20 +1,23 @@
 @import "src/styles/variables.scss";
 
 .homepage-layout {
-
+  border: $test;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 
   .image-container {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: space-between;
   }
   
   .main-image {
-    width: 90%;
-    max-height: 45vw;
+    width: 33%;
+    height: 30vw;
   }
 
   .text-under-image {
