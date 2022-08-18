@@ -11,18 +11,18 @@ Inventory can also be accessed from the admin interface where the quantity of al
 * [Farzaneh Sadegh](https://github.com/FarzanehSa).
 
 ## Screenshots
-![Home Page]()
-![Collection Page]()
-![Sinple Product]()
-![User's Review]()
-![Cart]()
-![After Purchase]()
-![Admin main]()
-![Dashboard]()
-![Product Edit]()
-![Inventory]()
-![Placed Orders]()
-![Reviews in Admin]()
+![Home Page](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/homepage.png)
+![Collection Page](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Collection%20Page.png)
+![Sinple Product](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Single%20Product.png)
+![User's Review](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/User%27s%20review.png)
+![Cart](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Cart.png)
+![After Purchase](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/After%20Purchase.png)
+![Admin main](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Admin.png)
+![Dashboard](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Dashboard.png)
+![Product Edit](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Product%20Edit.png)
+![Inventory](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Inventory%20quantity.png)
+![Placed Orders](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Placed%20Orders.png)
+![Reviews in Admin](https://github.com/FarzanehSa/shoeBox-client/blob/main/public/screenshots/Reviews%20in%20admin.png)
 
 ## Setup
 Both the frontend and backend are deployed using Heroku and Netlify.
