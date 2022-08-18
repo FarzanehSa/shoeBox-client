@@ -155,7 +155,7 @@ function App() {
   function closeModal() {setModalIsOpen(false);}
 
   function onLogin(inputUser) {
-    if (inputUser.name === 'admin' && inputUser.password === '123') {
+    if (inputUser.name === 'admin' && inputUser.password === '12345') {
       setUser(inputUser);
       setLoginError("")
       closeModal();

@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# The Shoebox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
+The Shoebox is an e-commerce website created as a final project for Lighthouse Labs. It includes both user and admin interfaces. The users' experience includes browsing through a collection of shoes where they can filter their search based on style, color and price. In addition to that, users will be able to choose the shoe size and add products to cart. In cart, users will be able to modify quantity and/or remove products. Reviews are also part of the app where users can add their opinions which will be sent to admins pending approval. The project uses Stripe for checkout and a message will pop up after successful purchase.<br /> <br />
+The Admin dashboard shows some statistics like most colors and sizes sold, as well as styles and so on.<br />
+Admin interface includes the ability of admins to update existing products like their price and description and many more. Admins will also be able to create new products and fill required fields to have a complete product to be shown in the collection.
+Inventory can also be accessed from the admin interface where the quantity of all item can be updated. All orders placed by users are also accessible by admins showing all necessary details like size, quantity, product name and price. The last part of admin interface is the reviews section where admins can either approve or decline users' written reviews and, upon approval, the reviews will show up in users interface.
 
-## Available Scripts
+## The Team
+* [Khaled Alkhatib](https://github.com/Khaled91Alkhatib),
+* [Farzaneh Sadegh](https://github.com/FarzanehSa).
 
-In the project directory, you can run:
+## Screenshots
+![Home Page]()
+![Collection Page]()
+![Sinple Product]()
+![User's Review]()
+![Cart]()
+![After Purchase]()
+![Admin main]()
+![Dashboard]()
+![Product Edit]()
+![Inventory]()
+![Placed Orders]()
+![Reviews in Admin]()
 
-### `npm start`
+## Setup
+Both the frontend and backend are deployed using Heroku and Netlify.
+* To access the main app please visit [Shoebox](https://shoe-box.netlify.app/)
+* To visit the admin dashboard please visit this [link](https://shoe-box.netlify.app/dashboard). The name is "admin" and the password is "12345"
+* To check the backend data please visit [The Shoebox API](https://shoe-box-api.herokuapp.com/)
+* The Stripe checkout implementation is in test mode. That means that there will be no actual financial transactions taking place even if real credit/debit card information where added. A card number that can be used is 4242 4242 4242 4242 and the rest of the checkout data can be filled using any data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Dependencies
+* react
+* react-dom
+* react-modal
+* react-toastify
+* react-fontawesome
+* react-stripe-checkout
+* styled-components
+* axios
+* victory
