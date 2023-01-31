@@ -41,7 +41,7 @@ function App() {
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [loginError, setLoginError] = useState("");
-  const [url, setUrl] = useState("https://shoe-box-api.herokuapp.com");
+  const [url, setUrl] = useState("https://shoebox.up.railway.app");
   const [title, setTitle] = useState("The Shoe Box")
 
   
@@ -63,7 +63,7 @@ function App() {
     }
     
     if (process.env.REACT_APP_API_BASE_URL) {
-      setUrl("https://shoe-box-api.herokuapp.com");
+      setUrl("https://shoebox.up.railway.app");
     } else {
       setUrl(`http://localhost:${process.env.REACT_APP_SERVER_PORT || 8100}`);
     }
